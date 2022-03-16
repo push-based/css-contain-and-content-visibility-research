@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <link rel="stylesheet" type="text/css" href="animation.css" />
+  </head>
+
+  <body>
+    <h1>Performance tests for `contain` style proterty</h1>
+    <ul>
+      <li>Open the devtools with [CTRL] + [SHIFT] + [i]</li>
+      <li>Open the "Performance" tab</li>
+      <li>Select a style value over the radio buttons</li>
+      <li>Start recording</li>
+      <li>Hover over the area with the gear ant wait for soe seconds</li>
+      <li>Stop recording</li>
+    </p>
+    <div id="panel"></div>
+
+    <script src="../utils.js"></script>
+    <script>
+      addWorkTrigger(document.getElementById('panel'));
+    </script>
+  </body>
+</html>

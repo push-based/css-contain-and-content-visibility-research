@@ -1,0 +1,171 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+.contain-target-wrapper {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.contain-target {
+  width: 100%;
+  padding: 1px;
+  margin-top: 10px;
+  border: 1px solid lightgray;
+}
+
+.contain-content {
+  background: lightgray;
+  width: 0%;
+  padding-left: 10px;
+  height: 18px;
+  box-shadow: 1px 1px 7px black;
+  transition: width 2.5s ease-in-out;
+}
+
+.contain-target:hover .contain-content {
+  width: 500px;
+}
+
+.contain-target-wrapper label {
+  width: 50px;
+  display: inline-block;
+}
+
+.contain-target-wrapper input {
+  width: 10px;
+  display: inline-block;
+}
+
+.contain-target-wrapper [data-styles] {
+  display: none;
+}
+
+.contain-target-wrapper input:checked + label {
+  font-weight: bold;
+}
+
+.contain-target-wrapper [data-styles] {
+  padding-top: 15px;
+  border: 1px dashed gray;
+}
+
+/* Value based styles */
+/*NONE*/
+.contain-target-wrapper input[value='none'] + label {
+  color: black;
+}
+.contain-target-wrapper input[value='none']:checked ~ [data-styles='none'] {
+  display: block;
+}
+.contain-target-wrapper input[value='none']:checked ~ .contain-target {
+  contain: none;
+}
+.contain-target-wrapper
+  input[value='none']:checked
+  ~ .contain-target
+  .contain-content {
+  background: black;
+}
+
+/*LAYOUT*/
+.contain-target-wrapper input[value='layout'] + label {
+  color: purple;
+}
+.contain-target-wrapper input[value='layout']:checked ~ [data-styles='layout'] {
+  display: block;
+}
+.contain-target-wrapper input[value='layout']:checked ~ .contain-target {
+  height: 20px;
+  width: 400px;
+  overflow: hidden;
+  contain: layout;
+}
+.contain-target-wrapper
+  input[value='layout']:checked
+  ~ .contain-target
+  .contain-content {
+  background: purple;
+}
+/*PAINT*/
+.contain-target-wrapper input[value='paint'] + label {
+  color: green;
+}
+.contain-target-wrapper input[value='paint']:checked ~ [data-styles='paint'] {
+  display: block;
+}
+.contain-target-wrapper input[value='paint']:checked ~ .contain-target {
+  height: 20px;
+  width: 400px;
+  contain: paint;
+}
+.contain-target-wrapper
+  input[value='paint']:checked
+  ~ .contain-target
+  .contain-content {
+  background: green;
+}
+/*SIZE*/
+.contain-target-wrapper input[value='size'] + label {
+  color: gray;
+}
+.contain-target-wrapper input[value='size']:checked ~ [data-styles='size'] {
+  display: block;
+}
+.contain-target-wrapper input[value='size']:checked ~ .contain-target {
+  height: 20px;
+  width: 400px;
+  contain: size;
+}
+.contain-target-wrapper
+  input[value='size']:checked
+  ~ .contain-target
+  .contain-content {
+  background: gray;
+}
+/*CONTENT*/
+.contain-target-wrapper input[value='content'] + label {
+  color: orangered;
+}
+.contain-target-wrapper
+  input[value='content']:checked
+  ~ [data-styles='content'] {
+  display: block;
+}
+.contain-target-wrapper input[value='content']:checked ~ .contain-target {
+  /*layout paint*/
+  height: 20px;
+  width: 400px;
+  contain: content;
+}
+.contain-target-wrapper
+  input[value='content']:checked
+  ~ .contain-target
+  .contain-content {
+  background: orangered;
+}
+/*STRICT*/
+.contain-target-wrapper input[value='strict'] + label {
+  color: darkred;
+}
+.contain-target-wrapper input[value='strict']:checked ~ [data-styles='strict'] {
+  display: block;
+}
+.contain-target-wrapper input[value='strict']:checked ~ .contain-target {
+  /*layout paint size*/
+  height: 20px;
+  width: 400px;
+  contain: strict;
+}
+.contain-target-wrapper
+  input[value='strict']:checked
+  ~ .contain-target
+  .contain-content {
+  background: darkred;
+}
+
+/* -------------------------------------------------------- */
