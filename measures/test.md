@@ -37,11 +37,25 @@ This can be evaluated over again the performance tab:
 ![img-contain-and-layout-root--node](https://user-images.githubusercontent.com/95690470/158654190-dda771b2-66ca-463e-8b18-8c53e2a808ff.PNG)
 
 
+### Visible overflow
+
+the visible overflow is defined over the `overflow` attribute and by default visible.
+We can restric this and usr a scroll bar intesad (or even hide the scrollba). This limites the paint area of the node.
+
+![img-contain-and-overflow](https://user-images.githubusercontent.com/95690470/158661451-50a9d0de-ee77-444a-b166-23f1a860fe1a.PNG)
+
+
 ## Comparison:
 
-_Performance profile_
-<iframe src="https://chromedevtools.github.io/timeline-viewer/?loadTimelineFromURL=https://raw.githubusercontent.com/push-based/css-contain-research/master/measures/Profile-contain-size.json" height="800px" width="100%"></iframe>
-
+| Value   | Impact | Usage  | Layout Root | Overflow | Description                           |
+| ------- | ------ | ------ | ----------- | -------- | ------------------------------------- | 
+| none    | n/a    | n/a    | document    | visible  | Default value with no effect          |
+| size    | ~      | +++    | document    | visible  |                                       |
+| layout  | +++    | --     | node        | hidden   | below-the fold nodes [1]              |
+| paint   | ++     | -      | node        | hidden   | below-the fold nodes [1]              |
+|   ---   |  ---   |  ---   | ---         |  ---     |  ---                                  |
+| content |        | ++     |             | visible  | Shorthand for `layout` `paint`        |
+| strict  |        | --     |             | hidden   | Shorthand for `layout` `paint` `size` |
 
 ### Measurement Result
 
