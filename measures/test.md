@@ -29,9 +29,25 @@ We can define the layoutroot by the following settings:
 
 ```css
 .contain-target {
- 
+  width: px;
+  height: px;
+  overflow: hidden;
+  contain: layout;
 }
 ```
+
+In some cases it is also possible to get the layoutroot with the following steeting:
+
+```css
+.contain-target {
+  width: px;
+  height: px;
+  overflow: hidden;
+}
+```
+![img-contain-and-layout-root-hack](https://user-images.githubusercontent.com/95690470/158713879-07a84928-2862-42a6-b801-cb7721cd43b8.PNG)
+
+However, `contain:layout` will work in any case.
 
 This can be evaluated over again the performance tab:
 ![img-contain-and-layout-root--node](https://user-images.githubusercontent.com/95690470/158654190-dda771b2-66ca-463e-8b18-8c53e2a808ff.PNG)
@@ -39,23 +55,24 @@ This can be evaluated over again the performance tab:
 
 ### Visible overflow
 
-the visible overflow is defined over the `overflow` attribute and by default visible.
-We can restric this and usr a scroll bar intesad (or even hide the scrollba). This limites the paint area of the node.
+The visible overflow is defined by the `overflow` property and the default value is `visible`.
+We can restric this and use a scroll bar instead (or even hide the scrollbar `auto`). This limits the paint area of the node.
 
 ![img-contain-and-overflow](https://user-images.githubusercontent.com/95690470/158661451-50a9d0de-ee77-444a-b166-23f1a860fe1a.PNG)
 
-
 ## Comparison:
 
-| Value   | Impact | Usage  | Layout Root | Overflow | Description                           |
-| ------- | ------ | ------ | ----------- | -------- | ------------------------------------- | 
-| none    | n/a    | n/a    | document    | visible  | Default value with no effect          |
-| size    | ~      | +++    | document    | visible  |                                       |
-| layout  | +++    | --     | node        | hidden   | below-the fold nodes [1]              |
-| paint   | ++     | -      | node        | hidden   | below-the fold nodes [1]              |
-|   ---   |  ---   |  ---   | ---         |  ---     |  ---                                  |
-| content |        | ++     |             | visible  | Shorthand for `layout` `paint`        |
-| strict  |        | --     |             | hidden   | Shorthand for `layout` `paint` `size` |
+| Value   | Impact | Usage  | Layout Root | Overflow | Description                                                                     |
+| ------- | ------ | ------ | ----------- | -------- | ------------------------------------------------------------------------------- | 
+| none    | n/a    | n/a    | document    | visible  | Default value with no effect                                                    |
+| size    | ~      | --     | document    | visible  | Geometry calcualtions are done without children. Without h/w the box collapses. |
+| layout  | +      | ++     | node        | visible  | Protect area against layout and vice versa, offscreen paint protection [1]      |
+| paint   | +      | +      | node        | hidden   | Same as layout, offscreen paint protection [1]                                  |
+|   ---   |  ---   |  ---   | ---         |  ---     |  ---                                                                            |
+| content | ++     | +      | node        | hidden   | Shorthand for `layout` `paint`                                                  |
+| strict  | +++    | --     | node        | hidden   | Shorthand for `layout` `paint` `size`                                           |
+
+[1 offscreen improvements](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment#paint_containment)
 
 ### Measurement Result
 
