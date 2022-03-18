@@ -27,88 +27,77 @@ The second test besides adding and removing DOM nodes is trigger recalculation w
 ![contain-comparison--offscreen-cards-setup](https://user-images.githubusercontent.com/95690470/159068427-e5ea1364-407d-4bd7-a174-1a793af6d3a6.PNG)
 
 
+### `contain`
+
+![img-comparison-onscreen-none](https://user-images.githubusercontent.com/95690470/159072468-37d060fc-d632-4f7d-8548-cf960f93c228.PNG)
+
 ### `contain:content`
 
-If we apply **`contain:content`** to all **`.card`** elements and **initially render the cards** we should not be able to land improvements.
+If we apply **`contain:content`** to all **`.card`** elements and **initially render the cards** we should not be able to land improvements for animation slightly.
 
 ![img-browser-render-pipeline](https://user-images.githubusercontent.com/95690470/159059677-06c6f6ee-0678-417b-b1cb-8c3a4053ff62.PNG)
 
-Expected impact at bootstrap is:
+Expected impact at **bootstrap** is:
 - ❌ no improvement in recalculate styles as we render the first time
 - ❌ no improvement in layouting as we render the first time
 - ❌ no improvement in painting as we render the first time
-- ❌ no improvement in for offscreen nodes as we render the first time
-
+- ❌ no improvement for offscreen nodes as there are none
+- 
+Expected impact at **animation** is:
+- ✔  improvement in recalculate styles shield it with `contain:layout` (included in `contain:content`)
+- ✔  improvement in layouting as we shield it with `contain:layout`
+- ✔  improvement in painting as we render the first time
+- ❌ no improvement for offscreen nodes as there are none
+- 
 **Measurement**
 
 Running a measure gives the following flames:
 
-![img-comparison-bootstrap-contain](https://user-images.githubusercontent.com/95690470/159004813-c593ccd5-039c-43be-9a79-5d468d84a2ed.PNG)
+![img-comparison-onscreen-contain](https://user-images.githubusercontent.com/95690470/159072540-d55cccf4-668e-4680-82dd-01e07b9b264b.PNG)
 
-The measure showed the following outcome:
-- ❌ no improvement in recalculate styles as we paint the first time 
-- 🤷‍👎 somehow layouting is not the biggest improvement [1]
-- 🤷‍👍 clear improvement in painting items onscreen (33 times faster)
-- 🤷‍👍 clear improvement in composite items onscreen (30% faster) 
-- ✔ improvement in painting items offscreen are clearly measurable
-
-
-_[1] contain-vs-none--alternating_  
-![img-comparison-bootstrap-none-vs-contain-pattern](https://user-images.githubusercontent.com/95690470/159005929-effa8c33-e77b-47fe-8088-36cbcca1aa4d.PNG)
-
-As there where clear signs for a difference in the assuptions i took another measure with a 25 times higher load [2]. This showed clear differences.
-The miss assumptions with painting of on vs offscreen elements is clear as the initial load will also receive the offscreen benefits of `contain:content`.
-
-_[2] unoptimized vs contain_  
-| Run | Styles           | Recalculate Styles | Layout | Update Layertree | Paint     | Composite |
-| --- | ---------------- | ------------------ | ------ | ---------------- | --------- | --------- |
-| 1.  | contain: none    | 610ms              | 1370ms | 320ms            | 350ms     | 130ms     |
-| 2.  | contain: none    | 550ms              | 1410ms | 300ms            | 330ms     | 130ms     |
-| 3.  | contain: content | 550ms              | 950ms  | 260ms            | 9ms       | 100ms     |
-| 4.  | contain: content | 620ms              | 1000ms | 450ms            | 9ms       | 100ms     |
+Outcome at **bootstrap** is:
+- ❌ no improvement in recalculate styles visible
+- ❌ no improvement in layouting visible
+- ❌ no improvement in painting visible
+- ❌ no improvement for offscreen visible
+- 
+Outcome at **animation** is:
+- ✔  improvement in recalculate styles visible
+- ✔  improvement in layouting visible
+- ✔  improvement in painting visible
+- ❌ no improvement for offscreen nodes as there are none
 
 ### `content-visibility:auto`
 
-If we apply **`content-visibility:auto`** to all **`.card`** elements and **initially render the cards** we should be able to improve the full render pipeling as we can literally ignore those nodes from the whole process.
+If we apply **`content-visibility:auto`** to all **`.card`** elements and **initially render the cards** we should not be able to land improvements for animation slightly.
 
-![img-comparison-bootstrap-content-visibility-diagram](https://user-images.githubusercontent.com/95690470/159006915-695bb687-7edc-45b0-ae2e-8d9261c72047.PNG)
-
-Expected impact at bootstrap is:
-- ✔ drastic improvement in recalculate styles as we skip 90% of the nodes (offscreen)
-- ✔ drastic improvement in layouting as we skip 90% of the nodes (offscreen)
-- ✔ slight improvement in painting items onscreen as we paint the first time 
-- ✔ drastic improvement in painting items offscreen as we skip them completely.
+Expected impact at **bootstrap** is:
+- ❌ no improvement in recalculate styles visible
+- ❌ no improvement in layouting visible
+- ❌ no improvement in painting visible
+- ❌ no improvement for offscreen visible
+- 
+Expected impact at **animation** is:
+- ✔  improvement in recalculate styles visible
+- ✔  improvement in layouting visible
+- ✔  improvement in painting visible
+- ❌ no improvement for offscreen nodes as there are none
 
 **Measurement**
 
 Running a measure gives the following flames:
 
-![img-comparison-bootstrap-content-visibility](https://user-images.githubusercontent.com/95690470/159007219-676a1c18-bf12-4343-bd84-e1e51e7c21aa.PNG)
+![img-comparison-onscreen-content-visibility](https://user-images.githubusercontent.com/95690470/159073015-01e46a35-4ce4-48d4-9f08-09459784c411.PNG)
 
-The measure showed the following outcome:
-- ✔ drastic improvement in recalculate styles clearly visible (22 times faster)
-- ✔ drastic improvement in layouting clearly visible (120 times faster)
-- 🤷‍👍 drastic improvement in composit and small in paint is measurably faster [3]
-- ✔ drastic improvement in painting items offscreen clearly visible (22 times faster)
+Expected impact at **bootstrap** is:
+- ❌ no improvement in recalculate styles visible
+- ❌ no improvement in layouting visible
+- ❌ no improvement in painting visible
+- ❌ no improvement for offscreen visible
+- 
+Expected impact at **animation** is:
+- ✔  improvement in recalculate styles visible
+- ✔  improvement in layouting visible
+- ✔  improvement in painting visible
+- ❌ no improvement for offscreen nodes as there are none
 
-_[3] contain:content vs content-visibility_  
-  ![img-comparison-bootstrap-contain-vs-content-visibility-pattern](https://user-images.githubusercontent.com/95690470/159022681-04605595-431a-42b6-b57b-7e6ff452f0b0.PNG)
-
-### Measurement Result
-
-- [Timeline - none](https://chromedevtools.github.io/timeline-viewer/?loadTimelineFromURL=https://raw.githubusercontent.com/push-based/css-contain-research/master/measures/Profile-comparison--bootstrap-none.json)
-- [Timeline - contain:content](https://chromedevtools.github.io/timeline-viewer/?loadTimelineFromURL=https://raw.githubusercontent.com/push-based/css-contain-research/master/measures/Profile-comparison--bootstrap-contain.json)
-- [Timeline - content-visibility:auto](https://chromedevtools.github.io/timeline-viewer/?loadTimelineFromURL=https://raw.githubusercontent.com/push-based/css-contain-research/master/measures/Profile-comparison--bootstrap-content-visibility.json)
-
-
-### Attachments with raw measurements
-
-> Raw files and screenshots of measurements can be found in the `/raw` directory.
-
-- [Profile-comparison--bootstrap-none.json](https://raw.githubusercontent.com/push-based/css-contain-research/master/measures/Profile-comparison--bootstrap-none.json)
-- [Profile-comparison--bootstrap-contain.json](https://raw.githubusercontent.com/push-based/css-contain-research/master/measures/Profile-comparison--bootstrap-contain.json)
-- [Profile-comparison--bootstrap-content-visibility.json](https://raw.githubusercontent.com/push-based/css-contain-research/master/measures/Profile-comparison--bootstrap-content-visibility.json)
-
-### Runtime Settings 
-
-default
