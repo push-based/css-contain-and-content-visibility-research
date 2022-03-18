@@ -119,8 +119,8 @@ The measure showed the following outcome:
 - ✔ drastic improvement in painting items offscreen clearly visible (22 times faster)
 
 _[3] contain:content vs content-visibility_  
-![img-comparison-bootstrap-contain-vs-content-visibility-pattern](https://user-images.githubusercontent.com/95690470/159010045-94c9715c-d53d-470f-8ad8-20128e51e306.PNG)
-  
+  ![img-comparison-bootstrap-contain-vs-content-visibility-pattern](https://user-images.githubusercontent.com/95690470/159022681-04605595-431a-42b6-b57b-7e6ff452f0b0.PNG)
+
 ### Measurement Result
 
 - [Timeline - none](https://chromedevtools.github.io/timeline-viewer/?loadTimelineFromURL=https://raw.githubusercontent.com/push-based/css-contain-research/master/measures/Profile-comparison--bootstrap-none.json)
