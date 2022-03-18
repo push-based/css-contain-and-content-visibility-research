@@ -114,7 +114,7 @@ Expected impact at **bootstrap** is:
 - ❌ no improvement in hit test visible
 - ❌ no improvement in painting visible
 - ❌ no improvement for offscreen visible
-- 
+
 Expected impact at **animation** is:
 - ✔  improvement in recalculate styles visible
 - ✔  improvement in layouting visible
@@ -206,7 +206,7 @@ Expected impact at **bootstrap** is:
 - ❌ no improvement in hit test visible
 - ❌ no improvement in painting visible
 - ❌ no improvement for offscreen visible
-- 
+
 Expected impact at **animation** is:
 - ✔  improvement in recalculate styles visible
 - ✔  improvement in layouting visible
