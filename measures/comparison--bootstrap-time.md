@@ -107,7 +107,7 @@ If we apply **`content-visibility:auto`** to all **`.card`** elements and **init
 Expected impact at bootstrap is:
 - ✔ drastic improvement in recalculate styles as we skip 90% of the nodes (offscreen)
 - ✔ drastic improvement in layouting as we skip 90% of the nodes (offscreen)
-- ❌ no improvement in painting items onscreen as we paint the first time 
+- ✔ slight improvement in painting items onscreen as we paint the first time 
 - ✔ drastic improvement in painting items offscreen as we skip them completely.
 
 **Measurement**
@@ -119,7 +119,7 @@ Running a measure gives the following flames:
 The measure showed the following outcome:
 - ✔ drastic improvement in recalculate styles clearly visible (22 times faster)
 - ✔ drastic improvement in layouting clearly visible (120 times faster)
-- 🤷‍👍 improvement in painting as well as composit is measurably faster [3]
+- 🤷‍👍 drastic improvement in composit and small in paint is measurably faster [3]
 - ✔ drastic improvement in painting items offscreen clearly visible (22 times faster)
 
 _[3] contain:content vs content-visibility_  
