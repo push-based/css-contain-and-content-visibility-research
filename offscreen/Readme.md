@@ -82,7 +82,6 @@ Outcome at **animation** is:
 - ❌ no improvement for offscreen nodes as there are none
 
 
-
 ### `content-visibility:auto` 
 
 If we apply **`content-visibility:auto`** to all **`.card`** elements and **initially render the cards** we should not be able to land improvements for animation slightly.
