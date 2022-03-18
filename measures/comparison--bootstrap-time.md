@@ -66,7 +66,7 @@ If we apply **`contain:content`** to all **`.card`** elements and **initially re
 
 Expected impact at bootstrap is:
 - ❌ no improvement in recalculate styles as we render the first time
-- ❌ no improvement in layouting as we render the first time
+- ✔ improvement in layouting as we have more specific layout roots and many of them are offscreen 
 - ❌ no improvement in painting items onscreen as we paint the first time 
 - ✔ improvement in painting items offscreen as we skip the paint and composite step for offscreen nodes due to `paint` and `layout` containment. (`content` is shorthand for `paint layout`). 
 
@@ -78,10 +78,11 @@ Running a measure gives the following flames:
 
 The measure showed the following outcome:
 - ❌ no improvement in recalculate styles as we paint the first time 
-- 🤷‍👎 somehow longer layouting [1]
+- 🤷‍👎 somehow layouting is not the biggest improvement [1]
 - 🤷‍👍 clear improvement in painting items onscreen (33 times faster)
 - 🤷‍👍 clear improvement in composite items onscreen (30% faster) 
 - ✔ improvement in painting items offscreen are clearly measurable
+
 
 _[1] contain-vs-none--alternating_  
 ![img-comparison-bootstrap-none-vs-contain-pattern](https://user-images.githubusercontent.com/95690470/159005929-effa8c33-e77b-47fe-8088-36cbcca1aa4d.PNG)
