@@ -77,13 +77,21 @@ Running a measure gives the following flames:
 ![img-comparison-bootstrap-contain](https://user-images.githubusercontent.com/95690470/159004813-c593ccd5-039c-43be-9a79-5d468d84a2ed.PNG)
 
 The measure showed the following outcome:
-- 🤷‍♂️👎 somehow longer recalculate styles [1]
+- ❌ no improvement in recalculate styles as we paint the first time 
 - 🤷‍👎 somehow longer layouting [1]
-- ❌ no improvement in painting items onscreen as we paint the first time 
+- 🤷‍👍 clear improvement in painting items onscreen (33 times faster) 
 - ✔ improvement in painting items offscreen are clearly measurable
 
 _[1] contain-vs-none--alternating_  
 ![img-comparison-bootstrap-none-vs-contain-pattern](https://user-images.githubusercontent.com/95690470/159005929-effa8c33-e77b-47fe-8088-36cbcca1aa4d.PNG)
+
+_[2] unoptimized vs contain_  
+| Run | Styles           | Recalculate Styles | Layout | Update Layertree | Paint     | Composite |
+| --- | ---------------- | ------------------ | ------ | ---------------- | --------- | --------- |
+| 1.  | contain: none    | 610ms              | 1370ms | 320ms            | 350ms     | 130ms     |
+| 2.  | contain: none    | 550ms              | 1410ms | 300ms            | 330ms     | 130ms     |
+| 3.  | contain: content | 550ms              | 950ms  | 260ms            | 9ms       | 100ms     |
+| 4.  | contain: content | 620ms              | 1000ms | 450ms            | 9ms       | 100ms     |
 
 
 ### `content-visibility:auto`
@@ -107,10 +115,10 @@ Running a measure gives the following flames:
 The measure showed the following outcome:
 - ✔ drastic improvement in recalculate styles clearly visible (22 times faster)
 - ✔ drastic improvement in layouting clearly visible (120 times faster)
-- 🤷‍👍 improvement in painting as well as composit is measurably faster [2]
+- 🤷‍👍 improvement in painting as well as composit is measurably faster [3]
 - ✔ drastic improvement in painting items offscreen clearly visible (22 times faster)
 
-_[2] contain:content vs content-visibility_  
+_[3] contain:content vs content-visibility_  
 ![img-comparison-bootstrap-contain-vs-content-visibility-pattern](https://user-images.githubusercontent.com/95690470/159010045-94c9715c-d53d-470f-8ad8-20128e51e306.PNG)
   
 ### Measurement Result
