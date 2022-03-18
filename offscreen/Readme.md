@@ -6,7 +6,7 @@ window.innerHeight = 975px
 ## URL
 
 `https://typescript-nprm3z.stackblitz.io/`
-![contain-comparison--onscreen-cards](https://user-images.githubusercontent.com/95690470/159060917-7214baae-7447-4b0a-b705-883c23ff44d2.PNG)
+![contain-comparison--onscreen-cards](https://user-images.githubusercontent.com/95690470/159073370-63f05b4f-d186-4b17-8891-79e985f1ad51.PNG)
 
 
 
