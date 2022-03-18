@@ -79,11 +79,15 @@ Running a measure gives the following flames:
 The measure showed the following outcome:
 - ❌ no improvement in recalculate styles as we paint the first time 
 - 🤷‍👎 somehow longer layouting [1]
-- 🤷‍👍 clear improvement in painting items onscreen (33 times faster) 
+- 🤷‍👍 clear improvement in painting items onscreen (33 times faster)
+- 🤷‍👍 clear improvement in composite items onscreen (30% faster) 
 - ✔ improvement in painting items offscreen are clearly measurable
 
 _[1] contain-vs-none--alternating_  
 ![img-comparison-bootstrap-none-vs-contain-pattern](https://user-images.githubusercontent.com/95690470/159005929-effa8c33-e77b-47fe-8088-36cbcca1aa4d.PNG)
+
+As there where clear signs for a difference in the assuptions i took another measure with a 25 times higher load [2]. This showed clear differences.
+The miss assumptions with painting of on vs offscreen elements is clear as the initial load will also receive the offscreen benefits of `contain:content`.
 
 _[2] unoptimized vs contain_  
 | Run | Styles           | Recalculate Styles | Layout | Update Layertree | Paint     | Composite |
@@ -92,7 +96,6 @@ _[2] unoptimized vs contain_
 | 2.  | contain: none    | 550ms              | 1410ms | 300ms            | 330ms     | 130ms     |
 | 3.  | contain: content | 550ms              | 950ms  | 260ms            | 9ms       | 100ms     |
 | 4.  | contain: content | 620ms              | 1000ms | 450ms            | 9ms       | 100ms     |
-
 
 ### `content-visibility:auto`
 
