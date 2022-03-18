@@ -125,6 +125,8 @@ Expected impact at **animation** is:
 
 ## Offscreen nodes only
 
+![contain-comparison--all-offscreen-cards](https://user-images.githubusercontent.com/95690470/159096647-1bb95a73-348b-4230-91d6-d5614dadea0c.PNG)
+
 ### `contain: none`  
 
 ![img-comparison-offscreen-none](https://user-images.githubusercontent.com/95690470/159096345-abfbe1f0-8ffa-43dc-8895-72ea883a857e.PNG)
