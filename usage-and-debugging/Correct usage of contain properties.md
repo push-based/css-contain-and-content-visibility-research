@@ -68,7 +68,7 @@ We can restric this and use a scroll bar instead (or even hide the scrollbar `au
 | size    | ~      | --     | document    | visible  | Geometry calcualtions are done without children. Without h/w the box collapses. |
 | layout  | +      | ++     | node        | visible  | Protect area against layout and vice versa, offscreen paint protection [1]      |
 | paint   | +      | +      | node        | hidden   | Same as layout, offscreen paint protection [1]                                  |
-|   ---   |  ---   |  ---   | ---         |  ---     |  ---                                                                            |
+|         |        |        |             |          |                                                                                 |
 | content | ++     | +      | node        | hidden   | Shorthand for `layout` `paint`                                                  |
 | strict  | +++    | --     | node        | hidden   | Shorthand for `layout` `paint` `size`                                           |
 
