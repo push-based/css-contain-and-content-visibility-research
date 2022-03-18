@@ -14,15 +14,18 @@ window.innerHeight = 975px
 
 This measure tests the offscreen benefits of `contain:content` and `content-visibility:auto`. 
 
-![contain-comparison-cards-diagram](https://user-images.githubusercontent.com/95690470/158891348-220e5a77-0cc2-43f6-9cba-734c565e06fd.PNG)
+![contain-comparison-cards-offscreen-diagram](https://user-images.githubusercontent.com/95690470/159065333-5c53d26a-3222-49bc-88fa-50451f0b2984.PNG)
 
 ### Case setup
 
 As the page can be set up in different way lets quickly clarify the setup.
 
-To test onscreen offscreen render performance we specify 2 screen states "default" and "offscreen". default displays all 1tems on screen, the other state display all items offscreen with a `margin-top: 9000px`. By adding items in those 2 states we can measure the offscroon node benefits more accurate.
+To test onscreen offscreen render performance we specify 2 screen states "default" and "offscreen". default displays all 1tems on screen, the other state display all items offscreen with a `margin-top: 9000px`. By adding items in those 2 states we can measure the offscreen node benefits more accurate.
 
-![contain-comparison--onscreen-cards](https://user-images.githubusercontent.com/95690470/159060616-203d07e8-bbe4-4b99-a01e-18ef1f42cc56.PNG)
+The second test besides adding and removing DOM nodes is trigger recalculation with a animation. In our case it is just a color fade from purple to black.
+
+![contain-comparison--offscreen-cards-setup](https://user-images.githubusercontent.com/95690470/159068427-e5ea1364-407d-4bd7-a174-1a793af6d3a6.PNG)
+
 
 ### `contain:content`
 
