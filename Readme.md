@@ -23,6 +23,12 @@
 
 [1 offscreen improvements](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment#paint_containment)
 
+## Can I Use
+
+![caniuse-contain](https://user-images.githubusercontent.com/95690470/159102200-d3232902-b71f-413d-a473-36994e26f4e9.PNG)
+
+![caniuse-content-visibility](https://user-images.githubusercontent.com/95690470/159102242-d328c5c5-d0ba-44ad-a969-02d58a938a5e.PNG)
+
 ## Documentation
 
 - [w3 - CSS contain](https://www.w3.org/TR/css-contain-1/) - official spec  
