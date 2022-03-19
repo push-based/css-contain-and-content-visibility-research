@@ -11,15 +11,15 @@
 
 ## Comparison
 
-| Value   | Impact | Usage  | Layout Root | Overflow | Description                                                                     |
-| ------- | ------ | ------ | ----------- | -------- | ------------------------------------------------------------------------------- | 
-| none    | n/a    | n/a    | document    | visible  | Default value with no effect                                                    |
-| size    | ~      | --     | document    | visible  | Geometry calcualtions are done without children. Without h/w the box collapses. |
-| layout  | +      | ++     | node        | visible  | Protect area against layout and vice versa, offscreen paint protection [1]      |
-| paint   | +      | +      | node        | hidden   | Same as layout, offscreen paint protection [1]                                  |
-|         |        |        |             |          |                                                                                 |
-| content | ++     | +      | node        | hidden   | Shorthand for `layout` `paint`                                                  |
-| strict  | +++    | --     | node        | hidden   | Shorthand for `layout` `paint` `size`                                           |
+| Value   | Impact | Usage  | Layout Root | Overflow | Dimensions  | Description                                                       |
+| ------- | ------ | ------ | ----------- | -------- | ----------- | ------------------------------------------------------------------------------- | 
+| none    | n/a    | n/a    | document    | visible  | optional    | Default value with no effect                                                    |
+| size    | ~      | --     | document    | visible  | required    | Geometry calcualtions are done without children. Without h/w the box collapses. |
+| layout  | +      | ++     | node        | visible  | optional    | Protect area against layout and vice versa, offscreen paint protection [1]      |
+| paint   | +      | +      | node        | hidden   | optional    | Same as layout, offscreen paint protection [1]                                  |
+|         |        |        |             |          |             |                                                                                 |
+| content | ++     | +      | node        | hidden   | optional    | Shorthand for `layout` `paint`                                                  |
+| strict  | +++    | --     | node        | hidden   | required    | Shorthand for `layout` `paint` `size`                                           |
 
 [1 offscreen improvements](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment#paint_containment)
 
