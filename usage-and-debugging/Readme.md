@@ -60,20 +60,6 @@ We can restric this and use a scroll bar instead (or even hide the scrollbar `au
 
 ![img-contain-and-overflow](https://user-images.githubusercontent.com/95690470/158661451-50a9d0de-ee77-444a-b166-23f1a860fe1a.PNG)
 
-## Comparison:
-
-| Value   | Impact | Usage  | Layout Root | Overflow | Description                                                                     |
-| ------- | ------ | ------ | ----------- | -------- | ------------------------------------------------------------------------------- | 
-| none    | n/a    | n/a    | document    | visible  | Default value with no effect                                                    |
-| size    | ~      | --     | document    | visible  | Geometry calcualtions are done without children. Without h/w the box collapses. |
-| layout  | +      | ++     | node        | visible  | Protect area against layout and vice versa, offscreen paint protection [1]      |
-| paint   | +      | +      | node        | hidden   | Same as layout, offscreen paint protection [1]                                  |
-|         |        |        |             |          |                                                                                 |
-| content | ++     | +      | node        | hidden   | Shorthand for `layout` `paint`                                                  |
-| strict  | +++    | --     | node        | hidden   | Shorthand for `layout` `paint` `size`                                           |
-
-[1 offscreen improvements](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment#paint_containment)
-
 ### Measurement Result
 
 - [Timeline - contain-none](https://chromedevtools.github.io/timeline-viewer/?loadTimelineFromURL=https://raw.githubusercontent.com/push-based/css-contain-research/master/measures/Profile-contain-none.json)
