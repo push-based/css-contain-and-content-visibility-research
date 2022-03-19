@@ -35,4 +35,6 @@
 - [caniuse](https://caniuse.com/mdn-css_properties_contain) - `contain` browser support   
 - [caniuse](https://caniuse.com/css-content-visibility) - `content-visibility` browser support  
 - [css-tricks - almanac](https://css-tricks.com/almanac/properties/c/contain/) - by far best demos and visuall eplaination
-- [smashingmagazine - browsers-containment-css-contain-property](https://www.smashingmagazine.com/2019/12/browsers-containment-css-contain-property/) - good visula demos and explaination
+- [smashingmagazine - browsers-containment-css-contain-property](https://www.smashingmagazine.com/2019/12/browsers-containment-css-contain-property/) - good demo o visual limitations
+- [Paul Irish - What trigger's layout?](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
+- [Paul Lewis & Surma - CSS trigger](https://csstriggers.com/)
