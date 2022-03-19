@@ -23,7 +23,7 @@
 
 [1 offscreen improvements](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment#paint_containment)
 
-## Documantation
+## Documentation
 
 - [w3 - CSS contain](https://www.w3.org/TR/css-contain-1/) - official spec  
 - [caniuse](https://caniuse.com/mdn-css_properties_contain) - `contain` browser support   
