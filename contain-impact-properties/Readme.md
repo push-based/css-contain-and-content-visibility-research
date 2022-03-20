@@ -13,18 +13,88 @@
 - [Ob] obscured node => (partially) out of border-box
 
 
+# Obscured Nodes
+
+An example of this is a contained element not in view at the end of a block element and the beginning of that block element is visible.
+
 # Measurements
+
+- ❌ no improvement in recalculate styles 
 
 ## Layout
 
-### Layout work w/ layout containment [On]
-### Paint work w/ paint containment [Off]
+### [P,l,On] (test no improvement for different work)
+Improvement in:
+- ❌ layouting
+- ❌ hittest
+- ❌ painting
+- ❌ composite
+
+### [L,l,On]
+
+Improvement in:
+- ✔ layouting *
+- ❌ hittest
+- ❌ painting
+- ❌ composite
+
+[*]  as we shield layouting with `contain:layout`
+
+### [L,l,Off]
+
+Improvement in:
+- ❌ layouting *
+- ❌ hittest
+- ❌ painting
+- ❌ composite
+
+[*] no further improvement compated to measure [L,l,On]
+
+### [P,p,Off]
+
+Improvement in:
+- ❌ layouting as we shield layouting with `contain:layout`
+- ❌ hittest
+- ❌ painting
+- ❌ composite
 
 ## Paint
 
-### Paint work w/ paint containment [On]
-### Paint work w/ paint containment [Off]
-### Paint work w/ paint containment [Ob]
+### [L,p,On] (test no improvement for different work)
+Improvement in:
+- ❌ layouting *
+- ❌ hittest
+- ❌ painting
+- ❌ composite  
+
+[*] as we shield painting with `contain:paint` and this is a different type of work 
+
+### [P,p,On]
+- ❌ layouting *
+- ❌ hittest
+- ✔  painting **
+- ✔  composite **  
+
+[*] no improvement as different work type
+[**] as we shield painting with `contain:paint`  
+
+### [P,p,Off]
+
+- ❌ layouting *
+- ❌ hittest
+- ✔  painting **
+- ✔  composite ** 
+
+[*] no improvement as different work type
+[**] as we dont paint offscreen nodes 
+
+### [P,p,Ob]
+- ❌ layouting
+- ❌ hittest
+- ❌ painting
+- ❌ composite
+
+[*] no further improvement compated to measure [L,l,Off]
 
 ## Size
 
