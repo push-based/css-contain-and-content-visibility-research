@@ -39,6 +39,7 @@ Improvement in:
 - ❌ composite
 
 [*]  as we shield layouting with `contain:layout`
+[*]  `Update Layer Tree` disappears when work is performed outside of the contained element
 
 ### [L,l,Off]
 
