@@ -31,7 +31,9 @@
 
 ## Documentation
 
-- [w3 - CSS contain](https://www.w3.org/TR/css-contain-1/) - official spec  
+- [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/) - official spec  
+- [CSS Containment Module Level 2](https://www.w3.org/TR/css-contain-2/)
+- [CSS Containment Module Level 3](https://www.w3.org/TR/css-contain-3/)
 - [caniuse](https://caniuse.com/mdn-css_properties_contain) - `contain` browser support   
 - [caniuse](https://caniuse.com/css-content-visibility) - `content-visibility` browser support  
 - [css-tricks - almanac](https://css-tricks.com/almanac/properties/c/contain/) - by far best demos and visuall eplaination
