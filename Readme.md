@@ -42,7 +42,7 @@
 **Content Visibility**
 - [caniuse](https://caniuse.com/css-content-visibility) - `content-visibility` browser support  
 - [web.dev - content-visibility](https://web.dev/content-visibility/)
-- [chromestatus - contain-intrinsic-size:auto](https://chromestatus.com/feature/6740477866934272#:~:text=Feature%3A%20auto%20keyword%20for%20contain,through%20content%2Dvisibility%3A%20auto.)
+- [chromestatus - `contain-intrinsic-size:auto`](https://chromestatus.com/feature/6740477866934272#:~:text=Feature%3A%20auto%20keyword%20for%20contain,through%20content%2Dvisibility%3A%20auto.)
 
 **General**
 - [Paul Irish - What forces layout / reflow?](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
