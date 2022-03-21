@@ -54,10 +54,12 @@ Improvement in:
 ### [P,p,Off]
 
 Improvement in:
-- ❌ layouting as we shield layouting with `contain:layout`
+- ❌ layouting *
 - ❌ hittest
 - ❌ painting
 - ❌ composite
+
+[*]  as we shield layouting with `contain:layout`
 
 ## Paint
 
