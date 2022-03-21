@@ -31,13 +31,19 @@
 
 ## Documentation
 
+**Contain**
 - [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/) - official spec  
 - [CSS Containment Module Level 2](https://www.w3.org/TR/css-contain-2/)
 - [CSS Containment Module Level 3](https://www.w3.org/TR/css-contain-3/)
 - [caniuse](https://caniuse.com/mdn-css_properties_contain) - `contain` browser support   
-- [caniuse](https://caniuse.com/css-content-visibility) - `content-visibility` browser support  
-- [css-tricks - almanac](https://css-tricks.com/almanac/properties/c/contain/) - by far best demos and visuall eplaination
+- [css-tricks - almanac - contain](https://css-tricks.com/almanac/properties/c/contain/) - by far best demos and visuall eplaination
 - [smashingmagazine - browsers-containment-css-contain-property](https://www.smashingmagazine.com/2019/12/browsers-containment-css-contain-property/) - good demo o visual limitations
+
+**Content Visibility**
+- [caniuse](https://caniuse.com/css-content-visibility) - `content-visibility` browser support  
+- [web.dev - content-visibility](https://web.dev/content-visibility/)
+
+**General**
 - [Paul Irish - What forces layout / reflow?](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
 - [Paul Lewis & Surma - CSS trigger](https://csstriggers.com/)
 - chrome graphics feature set `chrome://gpu/`
