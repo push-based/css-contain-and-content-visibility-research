@@ -10,7 +10,7 @@
 - [[3.] Lab - Offscreen vs onscreen -- none vs contain vs content-visibility](https://github.com/push-based/css-contain-research/tree/master/offscreen)
 - [[4.] Work Specific - pain, layout](https://github.com/push-based/css-contain-research/tree/master/contain-impact-properties)
 - [[5.] content-visibility](https://github.com/push-based/css-contain-research/tree/master/content-visibility-impact-properties)
-- [[6.] real-world performance audit](https://github.com/push-based/css-contain-research/blob/master/angular-movies-audit) (nice challange as the app was already super fast)
+- [[6.] real-world performance audit](https://github.com/push-based/css-contain-research/blob/master/angular-movies-audit) (nice challenge as the app was already super fast)
 
 ## Comparison
 
