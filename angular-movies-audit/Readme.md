@@ -1,7 +1,16 @@
 # Audit on Angular movies project to improve performance with contain and content-visibility
 
+## TL;DR
+
+![img-ngm-after](https://user-images.githubusercontent.com/10064416/159596750-604fb5e7-9e58-4f5b-97eb-360907f65397.png)
+
+PR: https://github.com/tastejs/angular-movies/pull/107 
+
+
+## Description 
+
 URL
-**http://localhost:4200/list/category/popular**
+**https://angular-movies-a12d3.web.app/**
 
 **Desktop view:**
 ![img-ngm-overview](https://user-images.githubusercontent.com/10064416/159577772-30983977-65b9-40a8-bc1a-293922bb7876.png)
@@ -59,6 +68,7 @@ A first step would be to apply `contain: strict` (`contain: layout paint size`) 
 Next I could also contain the scroll area and apply `content-visibility:auto` as it could improve potential offscreen menu elements.
 I use a `contain-intrinsic-size` as i konw the item size `20px` and it will never change.
 
+```css
 .navigation {
   contain:content;
 }
