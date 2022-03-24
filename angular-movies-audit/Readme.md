@@ -1,4 +1,4 @@
-# Audit on Angular movies project to improve performance with contain and content-visibility
+# Audit on Angular movies project to improve performance with `contain` and `content-visibility`
 
 ## TL;DR
 
