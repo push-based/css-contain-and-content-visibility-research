@@ -29,9 +29,6 @@ We can define the layoutroot by the following settings:
 
 ```css
 .contain-target {
-  width: px;
-  height: px;
-  overflow: hidden;
   contain: layout;
 }
 ```
