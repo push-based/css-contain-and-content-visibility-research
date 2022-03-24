@@ -15,6 +15,7 @@
 ## Comparison
 
 ![CSS-contain--comparison](https://user-images.githubusercontent.com/10064416/159817372-ea9178ed-c466-454b-8e6f-83a02ef5ad6e.png)
+![CSS-content-visibility--comparison](https://user-images.githubusercontent.com/95690470/159824234-5ce4dc89-45a2-4a15-81e2-4e33dace104c.png)
 
 ## Can I Use
 
