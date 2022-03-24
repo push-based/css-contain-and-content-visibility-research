@@ -27,6 +27,7 @@
 
 **Code samples**
 - [css-containment-debug](https://stackblitz.com/edit/css-containment-debug)
+- [css-containment-demo](https://stackblitz.com/edit/css-containment-demo)
 - [movies app](https://github.com/tastejs/angular-movies)
 
 **Contain**
