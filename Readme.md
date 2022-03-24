@@ -24,6 +24,10 @@
 
 ## Documentation
 
+**Code samples**
+- [css-containment-debug](https://stackblitz.com/edit/css-containment-debug)
+- [movies app](https://github.com/tastejs/angular-movies)
+
 **Contain**
 - [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/) - official spec  
 - [CSS Containment Module Level 2](https://www.w3.org/TR/css-contain-2/)
