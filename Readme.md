@@ -41,5 +41,6 @@
 **General**
 - [Paul Irish - What forces layout / reflow?](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
 - [Paul Lewis & Surma - CSS trigger](https://csstriggers.com/)
+- [compositor-hit-testing](https://www.chromium.org/developers/design-documents/compositor-hit-testing/)
 - chrome graphics feature set `chrome://gpu/`
 - chrome flags `chrome://flags/`
