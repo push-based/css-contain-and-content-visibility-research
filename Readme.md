@@ -34,6 +34,7 @@
 - [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/) - official spec  
 - [CSS Containment Module Level 2](https://www.w3.org/TR/css-contain-2/)
 - [CSS Containment Module Level 3](https://www.w3.org/TR/css-contain-3/)
+- [The stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
 - [caniuse](https://caniuse.com/mdn-css_properties_contain) - `contain` browser support   
 - [css-tricks - almanac - contain](https://css-tricks.com/almanac/properties/c/contain/) - by far best demos and visuall eplaination
 - [smashingmagazine - browsers-containment-css-contain-property](https://www.smashingmagazine.com/2019/12/browsers-containment-css-contain-property/) - good demo o visual limitations
