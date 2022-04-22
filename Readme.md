@@ -1,5 +1,4 @@
-# `contain` and `content-visibility` - performance audit
-
+# `contain` and `content-visibility` - Research
 ![CSS-Contain-Content-Visibility-concepts - _michael-hladky](https://user-images.githubusercontent.com/10064416/159817327-bb2a7e22-99e9-4f71-be77-84f2dfadf435.png)
 
 
