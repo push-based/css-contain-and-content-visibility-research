@@ -32,13 +32,13 @@ Different Lab measures to understand the impact.
 ## Documentation
 
 **Code samples**
-- [css-containment-debug](https://stackblitz.com/edit/css-containment-debug)
+- 🔥🔥🔥 [css-containment-debug](https://stackblitz.com/edit/css-containment-debug)
 - [css-containment-demo](https://stackblitz.com/edit/css-containment-demo)
 - [movies app](https://github.com/tastejs/angular-movies)
 
 **Slides**
 - [Lab Measure Slides](https://docs.google.com/presentation/d/1lgPbQqK2TgrP0rt3CCVpwA-LwBj3GERxjNUGF0193aM/edit?usp=sharing)
-- [CSS Contain & Content Visibility - Talk](https://docs.google.com/presentation/d/1PWzVz1eqo78WpTgXuihBfnA8Fb4qDbZHVjSzk-m82qY/edit?usp=sharing)
+- 🔥🔥 [CSS Contain & Content Visibility - Talk](https://docs.google.com/presentation/d/1PWzVz1eqo78WpTgXuihBfnA8Fb4qDbZHVjSzk-m82qY/edit?usp=sharing)
 
 **Contain**
 - [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/) - official spec  
@@ -56,7 +56,7 @@ Different Lab measures to understand the impact.
 - [chromestatus - `contain-intrinsic-size:auto`](https://chromestatus.com/feature/6740477866934272#:~:text=Feature%3A%20auto%20keyword%20for%20contain,through%20content%2Dvisibility%3A%20auto.)
 
 **General**
-- [Paul Irish - What forces layout / reflow?](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
+- 🔥 [Paul Irish - What forces layout / reflow?](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
 - [Paul Lewis & Surma - CSS trigger](https://csstriggers.com/)
 - [web page geometry](https://docs.google.com/document/d/1WZKlOSUK4XI0Le0fgCsyUTVw0dTwutZXGWwzlHXewiU)
 - chrome graphics feature set `chrome://gpu/`
