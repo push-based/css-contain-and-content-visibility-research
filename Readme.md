@@ -32,11 +32,14 @@ Different Lab measures to understand the impact.
 
 ## Documentation
 
-**Code samples / Assets**
+**Code samples**
 - [css-containment-debug](https://stackblitz.com/edit/css-containment-debug)
 - [css-containment-demo](https://stackblitz.com/edit/css-containment-demo)
 - [movies app](https://github.com/tastejs/angular-movies)
-- [Slides](https://docs.google.com/presentation/d/1lgPbQqK2TgrP0rt3CCVpwA-LwBj3GERxjNUGF0193aM/edit?usp=sharing)
+
+**Slides**
+- [Lab Measure Slides](https://docs.google.com/presentation/d/1lgPbQqK2TgrP0rt3CCVpwA-LwBj3GERxjNUGF0193aM/edit?usp=sharing)
+- [CSS Contain & Content Visibility - Talk](https://docs.google.com/presentation/d/1PWzVz1eqo78WpTgXuihBfnA8Fb4qDbZHVjSzk-m82qY/edit?usp=sharing)
 
 **Contain**
 - [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/) - official spec  
