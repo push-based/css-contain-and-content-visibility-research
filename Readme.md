@@ -6,8 +6,8 @@
 ## Audits
 A set of performance audits applying these properties.
 
-- [Angular Movies App](https://github.com/push-based/angular-movies-audits/blob/main/Readme.md)
-- 🔥 [Observable HQ - HTML/CSS only Performance Audit ](https://github.com/push-based/observable-hq--audit)
+- 🔥 [Angular Movies App](https://github.com/push-based/angular-movies-audits/blob/main/Readme.md)
+- 🔥🔥 [Observable HQ - HTML/CSS only Performance Audit ](https://github.com/push-based/observable-hq--audit)
 
 
 ## Measures
