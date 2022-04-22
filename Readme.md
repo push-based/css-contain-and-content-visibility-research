@@ -3,16 +3,23 @@
 ![CSS-Contain-Content-Visibility-concepts - _michael-hladky](https://user-images.githubusercontent.com/10064416/159817327-bb2a7e22-99e9-4f71-be77-84f2dfadf435.png)
 
 
+## Audits
+A set of performance audits applying these properties.
+
+- [Angular Movies App](https://github.com/push-based/angular-movies-audits/blob/main/Readme.md)
+- 🔥 [Observable HQ - HTML/CSS only Performance Audit ](https://github.com/push-based/observable-hq--audit)
+
+
 ## Measures
+Different Lab measures to understand the impact.
 
 - [[1.] Lab - Correct usage and debugging](https://github.com/push-based/css-contain-research/blob/master/usage-and-debugging)
 - 💪 [[2.] Lab - Bootstrap -- none vs contain vs content-visibility v1](https://github.com/push-based/css-contain-research/tree/master/bootstrap-v1) (partially invalidated by [3.])
 - 💪 [[3.] Lab - Offscreen vs onscreen -- none vs contain vs content-visibility](https://github.com/push-based/css-contain-research/tree/master/offscreen)
 - [[4.] Work Specific - pain, layout](https://github.com/push-based/css-contain-research/tree/master/contain-impact-properties)
 - [[5.] content-visibility](https://github.com/push-based/css-contain-research/tree/master/content-visibility-impact-properties)
-- 🔥 [[6.] real-world performance audit](https://github.com/push-based/css-contain-research/blob/master/angular-movies-audit) (nice challenge as the app was already super fast)
 
-## Comparison
+## Overview of the properties
 
 ![CSS-contain--comparison](https://user-images.githubusercontent.com/10064416/159817372-ea9178ed-c466-454b-8e6f-83a02ef5ad6e.png)
 ![CSS-content-visibility--comparison](https://user-images.githubusercontent.com/95690470/159824234-5ce4dc89-45a2-4a15-81e2-4e33dace104c.png)
@@ -25,10 +32,11 @@
 
 ## Documentation
 
-**Code samples**
+**Code samples / Assets**
 - [css-containment-debug](https://stackblitz.com/edit/css-containment-debug)
 - [css-containment-demo](https://stackblitz.com/edit/css-containment-demo)
 - [movies app](https://github.com/tastejs/angular-movies)
+- [Slides](https://docs.google.com/presentation/d/1lgPbQqK2TgrP0rt3CCVpwA-LwBj3GERxjNUGF0193aM/edit?usp=sharing)
 
 **Contain**
 - [CSS Containment Module Level 1](https://www.w3.org/TR/css-contain-1/) - official spec  
