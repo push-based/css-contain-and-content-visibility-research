@@ -13,8 +13,8 @@ A set of performance audits applying these properties.
 Different Lab measures to understand the impact.
 
 - [[1.] Lab - Correct usage and debugging](https://github.com/push-based/css-contain-research/blob/master/usage-and-debugging)
-- 💪 [[2.] Lab - Bootstrap -- none vs contain vs content-visibility v1](https://github.com/push-based/css-contain-research/tree/master/bootstrap-v1) (partially invalidated by [3.])
-- 💪 [[3.] Lab - Offscreen vs onscreen -- none vs contain vs content-visibility](https://github.com/push-based/css-contain-research/tree/master/offscreen)
+- **[[2.] Lab - Bootstrap -- none vs contain vs content-visibility v1](https://github.com/push-based/css-contain-research/tree/master/bootstrap-v1) (partially invalidated by [3.])** 👍
+- **[[3.] Lab - Offscreen vs onscreen -- none vs contain vs content-visibility](https://github.com/push-based/css-contain-research/tree/master/offscreen)** 👍
 - [[4.] Work Specific - pain, layout](https://github.com/push-based/css-contain-research/tree/master/contain-impact-properties)
 - [[5.] content-visibility](https://github.com/push-based/css-contain-research/tree/master/content-visibility-impact-properties)
 
