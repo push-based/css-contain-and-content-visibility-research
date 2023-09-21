@@ -61,3 +61,7 @@ Different Lab measures to understand the impact.
 - [web page geometry](https://docs.google.com/document/d/1WZKlOSUK4XI0Le0fgCsyUTVw0dTwutZXGWwzlHXewiU)
 - chrome graphics feature set `chrome://gpu/`
 - chrome flags `chrome://flags/`
+
+---
+
+made with ❤ by [push-based.io](https://www.push-based.io)
