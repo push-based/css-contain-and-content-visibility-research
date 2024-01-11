@@ -36,6 +36,10 @@ Different Lab measures to understand the impact.
 - [css-containment-demo](https://stackblitz.com/edit/css-containment-demo)
 - [movies app](https://github.com/tastejs/angular-movies)
 
+**Talks**
+- [Next generation CSS performance](https://youtu.be/adRawKeHi90?si=qv64I7DE0Vu3I46J)
+
+
 **Slides**
 - [Lab Measure Slides](https://docs.google.com/presentation/d/1lgPbQqK2TgrP0rt3CCVpwA-LwBj3GERxjNUGF0193aM/edit?usp=sharing)
 - 🔥🔥 [CSS Contain & Content Visibility - Talk](https://docs.google.com/presentation/d/1PWzVz1eqo78WpTgXuihBfnA8Fb4qDbZHVjSzk-m82qY/edit?usp=sharing)
