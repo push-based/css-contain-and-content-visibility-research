@@ -1,0 +1,21 @@
+{
+  "name": "css-containment-debug",
+  "version": "1.0.0",
+  "description": "CSS Containment Debug Tool",
+  "scripts": {
+    "dev": "npx vite",
+    "build": "npx vite build",
+    "preview": "npx vite preview",
+    "start": "npx vite --open /index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "milligram": "^1.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11"
+  }
+}

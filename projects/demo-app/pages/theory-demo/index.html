@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory Demo - CSS Containment</title>
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+    <link rel="stylesheet" href="../../styles-consolidated.css">
+    <style type="text/css" data-module="work-trigger">
+        :root {
+          /* CSS Variables for work trigger colors */
+          --noneFc: black;
+          --noneOc: #000000;
+          --noneOs: solid;
+          --noneOw: 1px;
+          --noneBc: #eee;
+        
+          --layoutFc: white;
+          --layoutOc: purple;
+          --layoutOs: dashed;
+          --layoutOw: 2px;
+          --layoutBc: rgb(161, 92, 161);
+        
+          --paintFc: white;
+          --paintOc: green;
+          --paintOs: dotted;
+          --paintOw: 2px;
+          --paintBc: rgb(92, 161, 115);
+        
+          --contentFc: black;
+          --contentOc: rgb(143, 62, 100);
+          --contentOs: dotted;
+          --contentOw: 3px;
+          --contentBc: rgb(204, 99, 148);
+        }
+        
+        /* Work trigger checkbox styles */
+        #trigger-controls-wrapper {
+          height: 60px;
+          overflow: hidden;
+        }
+        
+        #container-main-wrapper {
+          height: calc(100vh - 220px);
+          overflow: auto;
+        }
+        
+        .work.paint {
+          width: 10px;
+          height: 10px;
+          background: var(--paintBc);
+          border: var(--paintOc) var(--paintOw) var(--paintOs); 
+          border-radius: 5px;
+          box-shadow: 5px 5px 5px var(--paintBc);
+          position: relative;
+          transform: rotate(35deg);
+        }
+        .work.paint::after {
+          content: " ";
+          position: absolute;
+          left: 10000000000000000000000000000000000000000000000000px;
+          width: 10px;
+          height: 10px;
+          background: var(--paintBc);
+          border: var(--paintOc) var(--paintOw) var(--paintOs); 
+          border-radius: 5px;
+          box-shadow: 5px 5px 5px var(--paintBc);
+          position: relative;
+          transform: rotate(35deg);
+        }
+        
+        .checkbox-group-trigger {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          align-items: center;
+        }
+        
+        .checkbox-group-trigger label {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          background-color: var(--noneBc);
+          border: 1px solid var(--noneOc);
+          color: var(--noneFc);
+          min-width: 120px;
+          justify-content: center;
+        }
+        
+        .checkbox-group-trigger input[type="checkbox"] {
+          margin: 0;
+          width: 16px;
+          height: 16px;
+          flex-shrink: 0;
+        }
+        
+        /* Layout trigger checkbox - triggers layout work */
+        #layout-trigger:checked + label,
+        .checkbox-group-trigger label:has(#layout-trigger:checked) {
+          background-color: var(--layoutBc);
+          color: var(--layoutFc);
+          border-color: var(--layoutOc);
+          font-weight: bold;
+          animation: layoutTrigger 500ms infinite alternate;
+        }
+        
+        @keyframes layoutTrigger {
+          0% {
+            margin-bottom: 0px;
+            transform: scaleY(1);
+          }
+          100% {
+            margin-bottom: 10px;
+            transform: scaleY(1.1);
+          }
+        }
+        
+        /* Paint trigger checkbox - triggers paint work */
+        #paint-trigger:checked + label,
+        .checkbox-group-trigger label:has(#paint-trigger:checked) {
+          background-color: var(--paintBc);
+          color: var(--paintFc);
+          border-color: var(--paintOc);
+          font-weight: bold;
+          animation: paintTrigger 250ms infinite alternate;
+        }
+        
+        @keyframes paintTrigger {
+          0% {
+            background-color: var(--paintBc);
+          }
+          100% {
+            background-color: var(--paintOc);
+          }
+        }
+        
+        /* Compositor trigger checkbox - triggers compositor work */
+        #compositor-trigger:checked + label,
+        .checkbox-group-trigger label:has(#compositor-trigger:checked) {
+          background-color: var(--contentBc);
+          color: var(--contentFc);
+          border-color: var(--contentOc);
+          font-weight: bold;
+          animation: compositorTrigger 500ms infinite alternate;
+        }
+        
+        @keyframes compositorTrigger {
+          0% {
+            transform: scaleX(1);
+          }
+          100% {
+            transform: scaleX(1.1);
+          }
+        }
+        </style>
+        
+</head>
+<body>
+    <div class="main-panels">
+            <fieldset class="content-generation">
+                <div class="input-groups">
+                    <div class="input-group">
+                        <div class="input-with-button">
+                            <input type="number" id="input-demo" value="3" min="1" max="10000" step="1" />
+                            <button id="btn-insert-demo" class="button button-small" data-work="demo" data-input="input-demo">Insert</button>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-with-button">
+                            <input type="number" id="input-layout" value="1000" min="1" max="10000" step="10" />
+                            <button id="btn-insert-layout" class="button button-small" data-work="layout" data-input="input-layout">Insert</button>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-with-button">
+                            <input type="number" id="input-paint" value="2000" min="1" max="10000" step="50" />
+                            <button id="btn-insert-paint" class="button button-small" data-work="paint" data-input="input-paint">Insert</button>
+                        </div>
+                    </div>
+                    <div class="input-group remove-all-group">
+                        <button id="btn-remove-m" class="button button-outline">Remove All</button>
+                    </div>
+                </div>
+            </fieldset>
+       
+            <div class="row">
+                <div class="column column-50">
+                    <fieldset>
+                        <div class="radio-group radio-inline">
+                            <label><input type="radio" name="scope" id="scope-container" value="container" checked> container</label>
+                            <label><input type="radio" name="scope" id="scope-children" value="children"> children</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="column column-50">
+                    <fieldset>
+                        <div class="checkbox-group checkbox-inline">
+                            <label><input type="checkbox" id="action-offscreen"> Move Offscreen</label>
+                            <label><input type="checkbox" id="action-obscure"> Obscure Content</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        
+            <fieldset>
+                <div class="button-group">
+                    <button data-contain="unset" class="button active">Reset</button>
+                    <button data-contain="layout" class="button">Layout</button>
+                    <button data-contain="paint" class="button">Paint</button>
+                    <button data-contain="size" class="button">Size</button>
+                    <button data-contain="content" class="button">Content</button>
+                    <button data-contain="strict" class="button">Strict</button>
+                </div>
+            </fieldset>
+        </section>
+    
+    
+</div>
+<div id="container-main-wrapper">
+
+        <div id="trigger-controls-wrapper" class="chip-row checkbox-group checkbox-group-trigger">
+            <label><input type="checkbox" data-trigger="layout" id="layout-trigger"> layout/hittest</label>
+            <label><input type="checkbox" data-trigger="paint" id="paint-trigger"> paint</label>
+            <label><input type="checkbox" data-trigger="compositor" id="compositor-trigger"> composite</label>
+        </div>
+    <div style="font-weight: bold; margin-bottom: 0.25rem;">Tested Nodes (<span id="count-total">0</span>)</div>
+    <div id="container-main">
+    </div>
+</div>
+<script type="module" src="./index.ts"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory Demo Button Test</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        .pass { background: #d4edda; color: #155724; }
+        .fail { background: #f8d7da; color: #721c24; }
+        button {
+            margin: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+        #test-frame {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #ddd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Theory Demo - Interactive Button Test</h1>
+    
+    <div class="test-section">
+        <h2>Automated Tests</h2>
+        <button onclick="runTests()">Run All Tests</button>
+        <button onclick="openDemo()">Open Demo in Frame</button>
+        <div id="test-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Manual Interactive Test</h2>
+        <p>Click the button above to open the demo, then test each button manually:</p>
+        <iframe id="test-frame" style="display:none"></iframe>
+    </div>
+
+    <script>
+        const baseUrl = 'http://localhost:3000';
+        
+        function openDemo() {
+            const frame = document.getElementById('test-frame');
+            frame.src = baseUrl + '/pages/theory-demo/index.html';
+            frame.style.display = 'block';
+        }
+
+        async function runTests() {
+            const results = document.getElementById('test-results');
+            results.innerHTML = '<p>Running tests...</p>';
+            
+            const tests = [
+                {
+                    name: 'Theory Demo Page Loads',
+                    test: async () => {
+                        const response = await fetch(baseUrl + '/pages/theory-demo/index.html');
+                        return response.ok;
+                    }
+                },
+                {
+                    name: 'All TypeScript Modules Load',
+                    test: async () => {
+                        const modules = [
+                            '/pages/theory-demo/index.ts',
+                            '/pages/theory-demo/contain-button.ts',
+                            '/pages/theory-demo/work-insert.buttons.ts',
+                            '/pages/theory-demo/work-trigger.buttons.ts',
+                            '/pages/theory-demo/layout.work.ts',
+                            '/pages/theory-demo/paint.work.ts',
+                            '/pages/theory-demo/utils.ts',
+                            '/pages/content.ts'
+                        ];
+                        
+                        const results = await Promise.all(
+                            modules.map(m => fetch(baseUrl + m))
+                        );
+                        
+                        return results.every(r => r.ok);
+                    }
+                },
+                {
+                    name: 'Header Panel Exists',
+                    test: async () => {
+                        const response = await fetch(baseUrl + '/pages/theory-demo/index.html');
+                        const html = await response.text();
+                        return html.includes('id="header-panel"');
+                    }
+                },
+                {
+                    name: 'Container Panel Exists',
+                    test: async () => {
+                        const response = await fetch(baseUrl + '/pages/theory-demo/index.html');
+                        const html = await response.text();
+                        return html.includes('id="container-panel"');
+                    }
+                },
+                {
+                    name: 'Container Main Exists',
+                    test: async () => {
+                        const response = await fetch(baseUrl + '/pages/theory-demo/index.html');
+                        const html = await response.text();
+                        return html.includes('id="container-main"');
+                    }
+                },
+                {
+                    name: 'Button Functions Defined (work-insert.buttons)',
+                    test: async () => {
+                        const response = await fetch(baseUrl + '/pages/theory-demo/work-insert.buttons.ts');
+                        const js = await response.text();
+                        return js.includes('btn-insert-demo') && 
+                               js.includes('btn-insert-layout') && 
+                               js.includes('btn-insert-paint');
+                    }
+                },
+                {
+                    name: 'Containment Buttons Defined (contain-button)',
+                    test: async () => {
+                        const response = await fetch(baseUrl + '/pages/theory-demo/contain-button.ts');
+                        const js = await response.text();
+                        return js.includes('Layout') && 
+                               js.includes('Paint') && 
+                               js.includes('Size') &&
+                               js.includes('Content') &&
+                               js.includes('Strict');
+                    }
+                },
+                {
+                    name: 'Trigger Buttons Defined (work-trigger.buttons)',
+                    test: async () => {
+                        const response = await fetch(baseUrl + '/pages/theory-demo/work-trigger.buttons.ts');
+                        const js = await response.text();
+                        return js.includes('hover-trigger') && 
+                               js.includes('layout-trigger') && 
+                               js.includes('paint-trigger');
+                    }
+                },
+                {
+                    name: 'CSS Variables Defined',
+                    test: async () => {
+                        const response = await fetch(baseUrl + '/styles.css');
+                        const css = await response.text();
+                        return css.includes('--layoutBc') && 
+                               css.includes('--paintBc') && 
+                               css.includes('--sizeBc');
+                    }
+                }
+            ];
+
+            let html = '<h3>Test Results:</h3>';
+            for (const {name, test} of tests) {
+                try {
+                    const passed = await test();
+                    html += `<div class="test-result ${passed ? 'pass' : 'fail'}">
+                        ${passed ? '✅' : '❌'} ${name}
+                    </div>`;
+                } catch (error) {
+                    html += `<div class="test-result fail">
+                        ❌ ${name} - Error: ${error.message}
+                    </div>`;
+                }
+            }
+            
+            results.innerHTML = html;
+        }
+
+        // Run tests on load
+        setTimeout(() => runTests(), 500);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,179 @@
+:root {
+  /* [Fc]= Font Color; [Bc]= Background Color; [Oc]= bOrder Color; [Os]= border style;*/
+  --noneFc: black;
+  --noneOc: #000000;
+  --noneOs: solid;
+  --noneOw: 1px;
+  --noneBc: #eee;
+
+  --layoutFc: white !important;
+  --layoutOc: purple !important;
+  --layoutOs: dashed !important;
+  --layoutOw: 2px;
+  --layoutBc: rgb(161, 92, 161) !important;
+
+  --paintFc: white;
+  --paintOc: green !important;
+  --paintOs: dotted;
+  --paintOw: 2px;
+  --paintBc: rgb(92, 161, 115);
+
+  --sizeFc: black;
+  --sizeOc: rgb(221, 160, 221);
+  --sizeOs: double;
+  --sizeOw: 3px;
+  --sizeBc: rgb(236, 203, 236);
+
+  --contentFc: black;
+  --contentOc: rgb(143, 62, 100);
+  --contentOs: dotted;
+  --contentOw: 3px;
+  --contentBc: rgb(204, 99, 148);
+
+  --strictFc: black;
+  --strictOc: rgb(255, 1, 1);
+  --strictOs: double;
+  --strictOw: 3px;
+  --strictBc: rgb(240, 99, 99);
+
+  --autoFc: black;
+  --autoOc: blue;
+  --autoOs: double;
+  --autoOw: 3px;
+  --autoBc: rgb(102, 99, 245);
+}
+#z-index-ref {
+  top: 150px;
+  left: 50vw;
+  z-index: 1;
+}
+header {
+  height: 100px;
+  width: 100vw;
+  border-bottom: black 1px solid;
+}
+
+button {
+  padding: 5px;
+  margin: 2px;
+  color: var(--noneFc);
+  border-color: var(--noneOc);
+  border-style: var(--noneOc);
+  background-color: var(--noneBc);
+}
+button.active {
+  font-weight: bold;
+}
+
+section {
+  border: 1px double darkgray;
+  margin: 0px;
+  min-height: 45px;
+  box-sizing: border-box;
+}
+
+#header-panel {
+  position: relative;
+    height: 140px;
+}
+
+
+#header-panel .checkbox-group,
+#header-panel .radios-group {
+  display: inline-block;
+  vertical-align: middle;
+}
+#header-panel .checkbox-group label,
+#header-panel .radios-group label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#container-panel {
+  height: 50px;
+  margin: 20px 0;
+  margin-bottom: 10px;
+}
+
+#container-panel.Active {
+  border: 1px solid red;
+  contain: paint;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+.block-element {
+  border: 1px solid black;
+}
+
+#container-main.layout-work-content {
+  background-color: var(--layoutBc);
+}
+#container-main.paint-work-content {
+}
+
+/* default 
+{ contain: none; content-visibility: unset; } 
+*/
+#container-main {
+  border: 1px soild;
+  width: 100%;
+}
+
+/* 
+{ contain: layout ; } 
+*/
+.contain-layout {
+  contain: layout;
+  border-color: var(--layoutOc);
+  border-width: var(--layoutOw);
+  border-style: var(--layoutOs);
+}
+/* 
+{ contain: paint ; } 
+*/
+.contain-paint {
+  contain: paint;
+  border-color: var(--paintOc);
+  border-width: var(--paintOw);
+  border-style: var(--paintOs);
+}
+/* 
+{ contain: size ; } 
+*/
+.contain-size {
+  border-color: var(--sizeBc);
+  border-style: var(--sizeOs);
+  border-width: var(--sizeOw);
+  contain: size;
+}
+/*
+{ contain: content; } ( shorthand for { contain: layout paint; } ) 
+*/
+.contain-content {
+  contain: content;
+  border-color: var(--containBc);
+  border-style: var(--containOs);
+  border-width: var(--containOw);
+}
+/* 
+{ contain: strict; } ( shorthand for { contain: layout paint size; } ) 
+*/
+.contain-strict {
+  contain: strict;
+  border-color: var(--strictBc);
+  border-style: var(--strictOs);
+  border-width: var(--strictOw);
+}
+
+/* 
+{ content-visibility: auto; } ( shorthand for { contain: layout paint size; } + helpers for size handling ) 
+*/
+.contain-content-visibility {
+  content-visibility: auto;
+  border-color: var(--autoBc);
+  border-style: var(--autoOs);
+  border-width: var(--autoOw);
+  /* contain-intrinsic-size: 150px; */
+  /* contain-intrinsic-size is not needed when dimensions are set */
+}

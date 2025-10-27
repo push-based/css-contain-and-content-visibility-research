@@ -1,0 +1,27 @@
+{
+  "name": "demo-app",
+  "version": "1.0.0",
+  "description": "Minimal HTML server setup",
+  "scripts": {
+    "dev": "vite",
+    "dev:theory": "vite --open /pages/theory-demo/index.html",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite --open /index.html",
+    "mcp:setup": "node scripts/mcp-automation.js",
+    "mcp:test": "node mcp-test-runner.js",
+    "mcp:compare": "node mcp-comparison.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+     "milligram": "^1.4.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11"
+  }
+}
+

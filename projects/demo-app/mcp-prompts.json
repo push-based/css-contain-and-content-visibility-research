@@ -1,0 +1,62 @@
+[
+  {
+    "name": "contain-none",
+    "prompt": "Please test the CSS containment scenario \"contain-none\":\n\n1. Navigate to: http://localhost:5173/pages/theory-demo/index.html\n2. Apply CSS modifications: {\"contain\":\"none\"}\n3. Run a performance audit focusing on: LCP, FID, CLS, FCP, TTI, TBT\n4. Take a screenshot and save as: contain-none.png\n5. Generate a performance report for this scenario\n\nDescription: Test baseline performance without containment",
+    "expectedMetrics": [
+      "LCP",
+      "FID",
+      "CLS",
+      "FCP",
+      "TTI",
+      "TBT"
+    ]
+  },
+  {
+    "name": "contain-layout",
+    "prompt": "Please test the CSS containment scenario \"contain-layout\":\n\n1. Navigate to: http://localhost:5173/pages/theory-demo/index.html\n2. Apply CSS modifications: {\"contain\":\"layout\"}\n3. Run a performance audit focusing on: LCP, FID, CLS, FCP, TTI, TBT\n4. Take a screenshot and save as: contain-layout.png\n5. Generate a performance report for this scenario\n\nDescription: Test layout containment performance",
+    "expectedMetrics": [
+      "LCP",
+      "FID",
+      "CLS",
+      "FCP",
+      "TTI",
+      "TBT"
+    ]
+  },
+  {
+    "name": "contain-paint",
+    "prompt": "Please test the CSS containment scenario \"contain-paint\":\n\n1. Navigate to: http://localhost:5173/pages/theory-demo/index.html\n2. Apply CSS modifications: {\"contain\":\"paint\"}\n3. Run a performance audit focusing on: LCP, FID, CLS, FCP, TTI, TBT\n4. Take a screenshot and save as: contain-paint.png\n5. Generate a performance report for this scenario\n\nDescription: Test paint containment performance",
+    "expectedMetrics": [
+      "LCP",
+      "FID",
+      "CLS",
+      "FCP",
+      "TTI",
+      "TBT"
+    ]
+  },
+  {
+    "name": "contain-strict",
+    "prompt": "Please test the CSS containment scenario \"contain-strict\":\n\n1. Navigate to: http://localhost:5173/pages/theory-demo/index.html\n2. Apply CSS modifications: {\"contain\":\"strict\"}\n3. Run a performance audit focusing on: LCP, FID, CLS, FCP, TTI, TBT\n4. Take a screenshot and save as: contain-strict.png\n5. Generate a performance report for this scenario\n\nDescription: Test strict containment performance",
+    "expectedMetrics": [
+      "LCP",
+      "FID",
+      "CLS",
+      "FCP",
+      "TTI",
+      "TBT"
+    ]
+  },
+  {
+    "name": "content-visibility-auto",
+    "prompt": "Please test the CSS containment scenario \"content-visibility-auto\":\n\n1. Navigate to: http://localhost:5173/pages/theory-demo/index.html\n2. Apply CSS modifications: {\"content-visibility\":\"auto\"}\n3. Run a performance audit focusing on: LCP, FID, CLS, FCP, TTI, TBT\n4. Take a screenshot and save as: content-visibility-auto.png\n5. Generate a performance report for this scenario\n\nDescription: Test content-visibility auto performance",
+    "expectedMetrics": [
+      "LCP",
+      "FID",
+      "CLS",
+      "FCP",
+      "TTI",
+      "TBT"
+    ]
+  }
+]

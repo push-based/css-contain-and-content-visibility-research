@@ -1,0 +1,106 @@
+<style type="text/css" data-module="work-trigger">
+:root {
+  /* CSS Variables for work trigger colors */
+  --noneFc: black;
+  --noneOc: #000000;
+  --noneOs: solid;
+  --noneOw: 1px;
+  --noneBc: #eee;
+
+  --layoutFc: white;
+  --layoutOc: purple;
+  --layoutOs: dashed;
+  --layoutOw: 2px;
+  --layoutBc: rgb(161, 92, 161);
+
+  --paintFc: white;
+  --paintOc: green;
+  --paintOs: dotted;
+  --paintOw: 2px;
+  --paintBc: rgb(92, 161, 115);
+
+  --contentFc: black;
+  --contentOc: rgb(143, 62, 100);
+  --contentOs: dotted;
+  --contentOw: 3px;
+  --contentBc: rgb(204, 99, 148);
+}
+
+/* Work trigger checkbox styles */
+.checkbox-group-trigger {
+  display: block;
+}
+
+.checkbox-group-trigger input[type="checkbox"] {
+  display: inline-block;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+/* Layout trigger checkbox - triggers layout work */
+#layout-trigger:checked + label,
+.checkbox-group-trigger label:has(#layout-trigger:checked) {
+  background-color: var(--layoutBc);
+  color: var(--layoutFc);
+  border-color: var(--layoutOc);
+  font-weight: bold;
+  animation: layoutTrigger 500ms infinite alternate;
+}
+
+@keyframes layoutTrigger {
+  0% {
+    margin-bottom: 0px;
+    transform: scaleY(1);
+  }
+  100% {
+    margin-bottom: 10px;
+    transform: scaleY(1.1);
+  }
+}
+
+/* Paint trigger checkbox - triggers paint work */
+#paint-trigger:checked + label,
+.checkbox-group-trigger label:has(#paint-trigger:checked) {
+  background-color: var(--paintBc);
+  color: var(--paintFc);
+  border-color: var(--paintOc);
+  font-weight: bold;
+  animation: paintTrigger 250ms infinite alternate;
+}
+
+@keyframes paintTrigger {
+  0% {
+    background-color: var(--paintBc);
+  }
+  100% {
+    background-color: var(--paintOc);
+  }
+}
+
+/* Compositor trigger checkbox - triggers compositor work */
+#compositor-trigger:checked + label,
+.checkbox-group-trigger label:has(#compositor-trigger:checked) {
+  background-color: var(--contentBc);
+  color: var(--contentFc);
+  border-color: var(--contentOc);
+  font-weight: bold;
+  animation: compositorTrigger 500ms infinite alternate;
+}
+
+@keyframes compositorTrigger {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(1.1);
+  }
+}
+</style>
+
+<div id="trigger-controls-wrapper" class="chip-row checkbox-group checkbox-group-trigger">
+    <label><input type="checkbox" data-trigger="layout" id="layout-trigger"> layout/hittest</label>
+    <label><input type="checkbox" data-trigger="paint" id="paint-trigger"> paint</label>
+    <label><input type="checkbox" data-trigger="compositor" id="compositor-trigger"> composite</label>
+</div>

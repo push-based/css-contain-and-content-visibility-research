@@ -1,0 +1,732 @@
+/* ========================================
+   CONSOLIDATED CSS - All Styles Combined
+   ======================================== */
+
+/* ========================================
+   BASE STYLES - Global Variables & Resets
+   ======================================== */
+
+:root {
+  /* Containment Color Variables */
+  --noneFc: black;
+  --noneOc: #000000;
+  --noneOs: solid;
+  --noneOw: 1px;
+  --noneBc: #eee;
+
+  --layoutFc: white;
+  --layoutOc: purple;
+  --layoutOs: dashed;
+  --layoutOw: 2px;
+  --layoutBc: rgb(161, 92, 161);
+
+  --paintFc: white;
+  --paintOc: green;
+  --paintOs: dotted;
+  --paintOw: 2px;
+  --paintBc: rgb(92, 161, 115);
+
+  --sizeFc: black;
+  --sizeOc: rgb(221, 160, 221);
+  --sizeOs: double;
+  --sizeOw: 3px;
+  --sizeBc: rgb(236, 203, 236);
+
+  --contentFc: black;
+  --contentOc: rgb(143, 62, 100);
+  --contentOs: dotted;
+  --contentOw: 3px;
+  --contentBc: rgb(204, 99, 148);
+
+  --strictFc: black;
+  --strictOc: rgb(255, 1, 1);
+  --strictOs: double;
+  --strictOw: 3px;
+  --strictBc: rgb(240, 99, 99);
+
+  --autoFc: black;
+  --autoOc: blue;
+  --autoOs: double;
+  --autoOw: 3px;
+  --autoBc: rgb(102, 99, 245);
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Test CSS Loading */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0 !important;
+}
+
+/* Debug Utilities */
+.debug {
+  display: none;
+}
+
+/* ========================================
+   CONTAINMENT STYLES - CSS Contain & Content-Visibility
+   ======================================== */
+
+/* Containment Property Classes */
+.contain-layout {
+  contain: layout;
+  border-color: var(--layoutOc);
+  border-width: var(--layoutOw);
+  border-style: var(--layoutOs);
+}
+
+.contain-paint {
+  contain: paint;
+  border-color: var(--paintOc);
+  border-width: var(--paintOw);
+  border-style: var(--paintOs);
+}
+
+.contain-size {
+  contain: size;
+  border-color: var(--sizeBc);
+  border-style: var(--sizeOs);
+  border-width: var(--sizeOw);
+}
+
+.contain-content {
+  contain: content;
+  border-color: var(--contentBc);
+  border-style: var(--contentOs);
+  border-width: var(--contentOw);
+}
+
+.contain-strict {
+  contain: strict;
+  border-color: var(--strictBc);
+  border-style: var(--strictOs);
+  border-width: var(--strictOw);
+}
+
+.contain-unset {
+  contain: unset;
+}
+
+.contain-content-visibility {
+  content-visibility: auto;
+  border-color: var(--autoBc);
+  border-style: var(--autoOs);
+  border-width: var(--autoOw);
+}
+
+/* Containment Demo Components */
+.contain-target-wrapper {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.contain-target {
+  width: 100%;
+  padding: 1px;
+  margin-top: 10px;
+  border: 1px solid lightgray;
+}
+
+.contain-content {
+  background: lightgray;
+  width: 0%;
+  padding-left: 10px;
+  height: 18px;
+  box-shadow: 1px 1px 7px black;
+  transition: width 2.5s ease-in-out;
+}
+
+.contain-target:hover .contain-content {
+  width: 500px;
+}
+
+.contain-target-wrapper label {
+  width: 50px;
+  display: inline-block;
+}
+
+.contain-target-wrapper input {
+  width: 10px;
+  display: inline-block;
+}
+
+.contain-target-wrapper [data-styles] {
+  display: none;
+  padding-top: 15px;
+  border: 1px dashed gray;
+}
+
+.contain-target-wrapper input:checked + label {
+  font-weight: bold;
+}
+
+/* Containment Value-Based Styles */
+/* NONE */
+.contain-target-wrapper input[value='none'] + label {
+  color: black;
+}
+.contain-target-wrapper input[value='none']:checked ~ [data-styles='none'] {
+  display: block;
+}
+.contain-target-wrapper input[value='none']:checked ~ .contain-target {
+  contain: none;
+}
+.contain-target-wrapper input[value='none']:checked ~ .contain-target .contain-content {
+  background: black;
+}
+
+/* LAYOUT */
+.contain-target-wrapper input[value='layout'] + label {
+  color: purple;
+}
+.contain-target-wrapper input[value='layout']:checked ~ [data-styles='layout'] {
+  display: block;
+}
+.contain-target-wrapper input[value='layout']:checked ~ .contain-target {
+  height: 20px;
+  width: 400px;
+  overflow: hidden;
+  contain: layout;
+}
+.contain-target-wrapper input[value='layout']:checked ~ .contain-target .contain-content {
+  background: purple;
+}
+
+/* PAINT */
+.contain-target-wrapper input[value='paint'] + label {
+  color: green;
+}
+.contain-target-wrapper input[value='paint']:checked ~ [data-styles='paint'] {
+  display: block;
+}
+.contain-target-wrapper input[value='paint']:checked ~ .contain-target {
+  height: 20px;
+  width: 400px;
+  contain: paint;
+}
+.contain-target-wrapper input[value='paint']:checked ~ .contain-target .contain-content {
+  background: green;
+}
+
+/* SIZE */
+.contain-target-wrapper input[value='size'] + label {
+  color: gray;
+}
+.contain-target-wrapper input[value='size']:checked ~ [data-styles='size'] {
+  display: block;
+}
+.contain-target-wrapper input[value='size']:checked ~ .contain-target {
+  height: 20px;
+  width: 400px;
+  contain: size;
+}
+.contain-target-wrapper input[value='size']:checked ~ .contain-target .contain-content {
+  background: gray;
+}
+
+/* CONTENT */
+.contain-target-wrapper input[value='content'] + label {
+  color: orangered;
+}
+.contain-target-wrapper input[value='content']:checked ~ [data-styles='content'] {
+  display: block;
+}
+.contain-target-wrapper input[value='content']:checked ~ .contain-target {
+  height: 20px;
+  width: 400px;
+  contain: content;
+}
+.contain-target-wrapper input[value='content']:checked ~ .contain-target .contain-content {
+  background: orangered;
+}
+
+/* STRICT */
+.contain-target-wrapper input[value='strict'] + label {
+  color: darkred;
+}
+.contain-target-wrapper input[value='strict']:checked ~ [data-styles='strict'] {
+  display: block;
+}
+.contain-target-wrapper input[value='strict']:checked ~ .contain-target {
+  height: 20px;
+  width: 400px;
+  contain: strict;
+}
+.contain-target-wrapper input[value='strict']:checked ~ .contain-target .contain-content {
+  background: darkred;
+}
+
+/* Content Action Styles */
+.move-offscreen {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  visibility: hidden !important;
+}
+
+.obscure-content {
+  opacity: 0.1 !important;
+  filter: blur(5px) !important;
+  pointer-events: none !important;
+}
+
+/* ========================================
+   COMPONENTS - Reusable UI Components
+   ======================================== */
+
+/* Button Components */
+.button.active {
+  font-weight: bold;
+}
+
+.button-small {
+  padding: 0.125rem 0.375rem;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  min-height: auto;
+  white-space: nowrap;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+
+/* Debug Layout Button - Force Purple */
+.button[data-contain='layout'] {
+  background-color: rgb(161, 92, 161) !important;
+  color: white !important;
+  border-color: purple !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+}
+
+.button[data-contain='paint'],
+button.button[data-contain='paint'] {
+  background-color: var(--paintBc, rgb(92, 161, 115)) !important;
+  color: var(--paintFc, white) !important;
+  border-color: var(--paintOc, green) !important;
+}
+
+.button[data-contain='size'],
+button.button[data-contain='size'] {
+  background-color: var(--sizeBc, rgb(236, 203, 236)) !important;
+  color: var(--sizeFc, black) !important;
+  border-color: var(--sizeOc, rgb(221, 160, 221)) !important;
+  border-style: double !important;
+}
+
+.button[data-contain='content'],
+button.button[data-contain='content'] {
+  background-color: var(--contentBc, rgb(204, 99, 148)) !important;
+  color: var(--contentFc, black) !important;
+  border-color: var(--contentOc, rgb(143, 62, 100)) !important;
+  border-width: 3px !important;
+}
+
+.button[data-contain='strict'],
+button.button[data-contain='strict'] {
+  background-color: var(--strictBc, rgb(240, 99, 99)) !important;
+  color: var(--strictFc, black) !important;
+  border-color: var(--strictOc, rgb(255, 1, 1)) !important;
+  border-style: double !important;
+}
+
+.button[data-contain='content-visibility'],
+button.button[data-contain='content-visibility'] {
+  background-color: var(--autoBc, rgb(102, 99, 245)) !important;
+  color: var(--autoFc, black) !important;
+  border-color: var(--autoOc, blue) !important;
+}
+
+.button[data-contain='unset'],
+button.button[data-contain='unset'] {
+  background-color: #6c757d !important;
+  color: white !important;
+  border-color: #6c757d !important;
+}
+
+button[data-trigger] {
+  color: var(--noneFc);
+  border-color: var(--noneOc);
+  border-style: var(--noneOs);
+  border-width: var(--noneOw);
+  background-color: var(--noneBc);
+  display: inline-block;
+  visibility: visible;
+}
+
+/* Work trigger button styles */
+#layout-trigger {
+  margin-bottom: 0px;
+  background-color: var(--layoutBc);
+  color: var(--layoutFc);
+  border-color: var(--layoutOc);
+  border-width: var(--noneOw);
+}
+#layout-trigger:checked:hover {
+}
+
+/* Paint and Composite Work */
+#paint-trigger {
+  background-color: var(--paintBc);
+  color: var(--paintFc);
+  border-color: var(--paintOc);
+}
+#paint-trigger:hover {
+}
+
+/* Composite Work */
+#compositor-trigger {
+  transform: scaleX(1);
+}
+
+/* Form Components */
+.input-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+  align-items: end;
+  width: 100%;
+  max-width: none;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.input-with-button {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.input-with-button input {
+  flex: 0 0 80px;
+  min-width: 60px;
+  max-width: 100px;
+}
+
+/* Compact input styling for better UX */
+input[type="number"] {
+  width: 80px;
+  min-width: 60px;
+  max-width: 100px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+input[type="text"] {
+  width: 80px;
+  min-width: 60px;
+  max-width: 100px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.checkbox-inline {
+  flex-direction: row !important;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.radio-inline {
+  flex-direction: row !important;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group label, .checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.remove-all-group {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.remove-all-group .button {
+  width: auto;
+  min-width: 120px;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Content Components */
+.placeholder {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px dashed #6c757d;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 4px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.placeholder p {
+  margin: 0.125rem 0;
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.25rem;
+  border-radius: 4px;
+  margin-bottom: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.info-box strong {
+  display: block;
+  margin-bottom: 0.125rem;
+  font-size: 1em;
+}
+
+.generated-items {
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.generated-items legend {
+  font-weight: bold;
+  color: #495057;
+  font-size: 1em;
+}
+
+.item-counts {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.25rem;
+  gap: 0.25rem;
+}
+
+.count-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.25rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  min-width: 60px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.count-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.count-label {
+  font-size: 0.8em;
+  color: #6c757d;
+  font-weight: 500;
+  margin-bottom: 0.125rem;
+}
+
+.count-value {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Utility Components */
+.help-icon {
+  cursor: help;
+  font-size: 0.8em;
+  margin-left: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.help-icon:hover {
+  opacity: 1;
+}
+
+.action-toolbar {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+
+.stats-display {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   LAYOUT - Layout & Spacing Utilities
+   ======================================== */
+
+/* Container Overrides */
+.container {
+  max-width: none !important;
+  width: 100% !important;
+  padding: 0 1rem;
+}
+
+/* Test CSS Loading - Very Obvious */
+.main-panels {
+  contain: strict;
+  content-visibility: auto;
+  contain-intrinsic-size: 700px 250px;
+  height: 250px;
+  overflow: hidden;
+  width: 700px;
+  border: 5px solid red !important;
+  background-color: yellow !important;
+}
+
+/* Content Generation Layout */
+.content-generation {
+  border: none;
+  padding: 0.125rem;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+}
+
+.content-generation .input-groups {
+  gap: 0.5rem;
+  margin-bottom: 0.125rem;
+}
+
+.content-generation .input-group {
+  gap: 0.0625rem;
+}
+
+.content-generation .input-with-button {
+  gap: 0.125rem;
+}
+
+/* Grid System */
+.row {
+  margin-bottom: 0.25rem;
+  width: 100%;
+  max-width: none;
+}
+
+.column {
+  padding: 0.125rem;
+  width: 100%;
+}
+
+/* Form Layout */
+fieldset {
+  margin-bottom: 0.25rem;
+  padding: 0.25rem;
+}
+
+legend {
+  margin-bottom: 0.125rem;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.content-generation legend {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  padding: 0;
+}
+
+/* Phase Layout */
+.setup-phase {
+  margin: 0.25rem 0;
+  padding: 0.25rem;
+}
+
+.execution-phase {
+  margin: 0.25rem 0;
+  padding: 0.25rem;
+}
+
+.results-phase {
+  margin: 0.25rem 0;
+  padding: 0.25rem;
+}
+
+/* Typography */
+h3:contains("①"), h3:contains("②"), h3:contains("③") {
+  font-weight: bold;
+}
+
+/* Specific Layout Elements */
+#z-index-ref {
+  /* Removed custom positioning - using Milligram defaults */
+}
+
+header {
+  /* Removed custom sizing - using Milligram defaults */
+}
+
+#container-panel.Active {
+  border: 1px solid red;
+  contain: paint;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+#container-main.layout-work-content {
+  background-color: var(--layoutBc);
+}
+
+#container-main.paint-work-content {
+  background-color: var(--paintBc);
+}
+
+#container-main-wrapper {
+  position: relative;
+  border: 2px dashed lightgray;
+  min-height: calc(100vh - 80px); /* Takes remaining height minus header space */
+  height: 100%;
+}
+
+
+#container-main {
+  position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .item-counts {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .count-item {
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: auto;
+    width: 100%;
+  }
+}

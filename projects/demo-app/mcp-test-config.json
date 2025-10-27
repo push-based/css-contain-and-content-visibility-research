@@ -1,0 +1,54 @@
+{
+  "testScenarios": [
+    {
+      "name": "contain-none",
+      "url": "http://localhost:5173/pages/theory-demo/index.html",
+      "cssModifications": {
+        "contain": "none"
+      },
+      "description": "Test baseline performance without containment"
+    },
+    {
+      "name": "contain-layout",
+      "url": "http://localhost:5173/pages/theory-demo/index.html",
+      "cssModifications": {
+        "contain": "layout"
+      },
+      "description": "Test layout containment performance"
+    },
+    {
+      "name": "contain-paint",
+      "url": "http://localhost:5173/pages/theory-demo/index.html",
+      "cssModifications": {
+        "contain": "paint"
+      },
+      "description": "Test paint containment performance"
+    },
+    {
+      "name": "contain-strict",
+      "url": "http://localhost:5173/pages/theory-demo/index.html",
+      "cssModifications": {
+        "contain": "strict"
+      },
+      "description": "Test strict containment performance"
+    },
+    {
+      "name": "content-visibility-auto",
+      "url": "http://localhost:5173/pages/theory-demo/index.html",
+      "cssModifications": {
+        "content-visibility": "auto"
+      },
+      "description": "Test content-visibility auto performance"
+    }
+  ],
+  "performanceMetrics": [
+    "LCP",
+    "FID", 
+    "CLS",
+    "FCP",
+    "TTI",
+    "TBT"
+  ],
+  "outputDir": "./mcp-test-results",
+  "screenshotDir": "./mcp-screenshots"
+}

@@ -1,4 +1,26 @@
 {
+  "name": "css-contain-and-content-visibility-research",
+  "version": "1.0.0",
+  "description": "Research material on CSS contain and content-visibility",
+  "keywords": [
+    "Css",
+    "Performance"
+  ],
+  "homepage": "https://github.com/push-based/css-contain-and-content-visibility-research#readme",
+  "bugs": {
+    "url": "https://github.com/push-based/css-contain-and-content-visibility-research/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/push-based/css-contain-and-content-visibility-research.git"
+  },
+  "license": "MIT",
+  "author": "Michael Hladky",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "rxjs": "^7.3.0"
   }
