@@ -25,9 +25,9 @@ Different Lab measures to understand the impact.
 
 ## Can I Use
 
-![caniuse-contain](https://user-images.githubusercontent.com/95690470/159102200-d3232902-b71f-413d-a473-36994e26f4e9.PNG)
+[![caniuse-contain](https://user-images.githubusercontent.com/95690470/159102200-d3232902-b71f-413d-a473-36994e26f4e9.PNG)](https://caniuse.com/?search=contain)
 
-![caniuse-content-visibility](https://user-images.githubusercontent.com/95690470/159102242-d328c5c5-d0ba-44ad-a969-02d58a938a5e.PNG)
+[![caniuse-content-visibility](https://user-images.githubusercontent.com/95690470/159102242-d328c5c5-d0ba-44ad-a969-02d58a938a5e.PNG)](https://caniuse.com/?search=content-visibility)
 
 ## Documentation
 
@@ -50,8 +50,8 @@ Different Lab measures to understand the impact.
 - [CSS Containment Module Level 3](https://www.w3.org/TR/css-contain-3/)
 - [The stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
 - [caniuse](https://caniuse.com/mdn-css_properties_contain) - `contain` browser support   
-- [css-tricks - almanac - contain](https://css-tricks.com/almanac/properties/c/contain/) - by far best demos and visuall eplaination
-- [smashingmagazine - browsers-containment-css-contain-property](https://www.smashingmagazine.com/2019/12/browsers-containment-css-contain-property/) - good demo o visual limitations
+- [css-tricks - almanac - contain](https://css-tricks.com/almanac/properties/c/contain/) - by far the best demos and visual explanation
+- [smashingmagazine - browsers-containment-css-contain-property](https://www.smashingmagazine.com/2019/12/browsers-containment-css-contain-property/) - good demo of visual limitations
 - [offscreen improvements](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment#paint_containment)
 
 **Content Visibility**
@@ -63,8 +63,10 @@ Different Lab measures to understand the impact.
 - 🔥 [Paul Irish - What forces layout / reflow?](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
 - [Paul Lewis & Surma - CSS trigger](https://csstriggers.com/)
 - [web page geometry](https://docs.google.com/document/d/1WZKlOSUK4XI0Le0fgCsyUTVw0dTwutZXGWwzlHXewiU)
-- chrome graphics feature set `chrome://gpu/`
-- chrome flags `chrome://flags/`
+- Chrome graphics feature set `chrome://gpu/`
+- Chrome flags `chrome://flags/`
+- Firefox graphics feature set `about:support` - mostly low level information
+- Firefox preferences `about:preferences`
 
 ---
 

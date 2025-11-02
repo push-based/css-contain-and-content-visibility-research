@@ -19,9 +19,9 @@ This measure tests the offscreen benefits of `contain:content` and `content-visi
 
 As the page can be set up in different way lets quickly clarify the setup.
 
-To test onscreen offscreen render performance we specify 2 screen states "default" and "offscreen". default displays all 1tems on screen, the other state display all items offscreen with a `margin-top: 9000px`. By adding items in those 2 states we can measure the offscreen node benefits more accurate.
+To test onscreen/offscreen render performance we specify 2 screen states "default" and "offscreen". Default displays all items on screen, the other state displays all items offscreen with a `margin-top: 9000px`. By adding items in those 2 states we can measure the offscreen node benefits more accurate.
 
-The second test besides adding and removing DOM nodes is trigger recalculation with a animation. In our case it is just a color fade from purple to black.
+The second test, besides adding and removing DOM nodes, triggers recalculation with an animation. In our case it is just a color fade from purple to black.
 
 ![contain-comparison--offscreen-cards-setup](https://user-images.githubusercontent.com/95690470/159068427-e5ea1364-407d-4bd7-a174-1a793af6d3a6.PNG)
 
@@ -35,7 +35,7 @@ The measure consists out of 2 types of settings:
 
 ![img-comparison-onscreen-none](https://user-images.githubusercontent.com/95690470/159072468-37d060fc-d632-4f7d-8548-cf960f93c228.PNG)
 
-This mesure is herre as a reference only.
+This measure is here as a reference only.
 
 ### `contain:content` - onscreen nodes only  
 
@@ -130,7 +130,7 @@ Expected impact at **animation** is:
 
 ![img-comparison-offscreen-none](https://user-images.githubusercontent.com/95690470/159096345-abfbe1f0-8ffa-43dc-8895-72ea883a857e.PNG)
 
-This mesure is herre as a reference only.
+This measure is here as a reference only.
 
 ### `contain:content` - onscreen nodes only  
 
