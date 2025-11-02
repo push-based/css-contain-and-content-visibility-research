@@ -10,7 +10,7 @@
 
 ## Description
 
-This measure tests the different contain properties without load. It's should generate a reproducable validation of the theoretical knowledge.
+This measure tests the different contain properties without load. It's should generate a reproducible validation of the theoretical knowledge.
 
 The target node under test is the border box around the loading bar.
 The radio inputs apply the styles visible below the target and color the bar.
@@ -20,7 +20,7 @@ The radio inputs apply the styles visible below the target and color the bar.
 By default the layout root is the document.
 Any changes inside the target node will cause a relayout of the whole page.
 
-This can be check if we a recording of te the animation and click a tasks layout work.
+This can be checked if we have a recording of the animation and click on the tasks layout.
 ![img-contain-and-layout-root--document](https://user-images.githubusercontent.com/95690470/158653604-0754b098-dbcb-4adc-8c0e-8865859d0572.PNG)
 
 We can see the layout root is `#document`.
@@ -33,7 +33,7 @@ We can define the layoutroot by the following settings:
 }
 ```
 
-In some cases it is also possible to get the layoutroot with the following steeting:
+In some cases it is also possible to get the layoutroot with the following setting:
 
 ```css
 .contain-target {
@@ -53,7 +53,7 @@ This can be evaluated over again the performance tab:
 ### Visible overflow
 
 The visible overflow is defined by the `overflow` property and the default value is `visible`.
-We can restric this and use a scroll bar instead (or even hide the scrollbar `auto`). This limits the paint area of the node.
+We can restrict this and use a scroll bar instead (or even hide the scrollbar `auto`). This limits the paint area of the node.
 
 ![img-contain-and-overflow](https://user-images.githubusercontent.com/95690470/158661451-50a9d0de-ee77-444a-b166-23f1a860fe1a.PNG)
 

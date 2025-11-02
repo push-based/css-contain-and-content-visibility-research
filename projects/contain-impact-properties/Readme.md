@@ -51,7 +51,7 @@ Improvement in:
 - ❌ painting
 - ❌ composite
 
-[*] no further improvement compated to measure [L,l,On]
+[*] no further improvement compared to measure [L,l,On]
 
 ### [P,p,Off]
 
@@ -91,7 +91,7 @@ Improvement in:
 - ✔  composite ** 
 
 [*] no improvement as different work type
-[**] as we dont paint offscreen nodes 
+[**] as we don't paint offscreen nodes
 
 ### [P,p,Ob]
 - ❌ layouting
@@ -99,7 +99,7 @@ Improvement in:
 - ❌ painting
 - ❌ composite
 
-[*] no further improvement compated to measure [L,l,Off]
+[*] no further improvement compared to measure [L,l,Off]
 
 ## Size
 

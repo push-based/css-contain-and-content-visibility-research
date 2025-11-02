@@ -25,7 +25,7 @@ The target node under test are the card elements.
 As the page can be set up in different way lets quickly clarify the setup.
 
 As we focus on rendering and paint, it makes a difference if we load the images lazy of not.
-The following diagram shows how the artefacts at the end of the flames chage, depending on `loading` attributes value. (`lazy` or nothing)
+The following diagram shows how the artefacts at the end of the flames change, depending on `loading` attributes value. (`lazy` or nothing)
 
 ![img-comparison-bootstrap-doading-lazy](https://user-images.githubusercontent.com/95690470/159002129-d9571db9-13f7-4403-afb6-dadf16514522.PNG)
 
@@ -33,7 +33,7 @@ The following diagram shows how the artefacts at the end of the flames chage, de
   <img loading="lazy" ... />
 ```
 
-We take the version with lazy loaded images as atrefacts at the end, caosed by the the offscreen images provide a nice case to test the improvements in offscreen areas. 
+We take the version with lazy loaded images as artefacts at the end, caused by the the offscreen images. This provides a nice case to test the improvements in offscreen areas. 
 
 ### Bootstrap process
 
@@ -53,7 +53,7 @@ On click we add a set of cards programmatically:
 After that we have styles recalculation, layout, hit test, paint and composite of the added nodes.
 We can see that recalculation and layout take the longest.
 
-After some time we have another badge of tasks caused by the images with `loading="lazy"` as the HTTP request is pushed to the end of the renderpipeline.
+After some time we have another batch of tasks caused by the images with `loading="lazy"` as the HTTP request is pushed to the end of the render pipeline.
 
 Now lets test `contain:content` and `content-visibility`
 
@@ -87,8 +87,8 @@ The measure showed the following outcome:
 _[1] contain-vs-none--alternating_  
 ![img-comparison-bootstrap-none-vs-contain-pattern](https://user-images.githubusercontent.com/95690470/159005929-effa8c33-e77b-47fe-8088-36cbcca1aa4d.PNG)
 
-As there where clear signs for a difference in the assuptions i took another measure with a 25 times higher load [2]. This showed clear differences.
-The miss assumptions with painting of on vs offscreen elements is clear as the initial load will also receive the offscreen benefits of `contain:content`.
+As there were clear signs for a difference in the assumptions, I took another measure with a 25 times higher load [2]. This showed clear differences.
+The miss-assumptions with painting of on vs offscreen elements is clear as the initial load will also receive the offscreen benefits of `contain:content`.
 
 _[2] unoptimized vs contain_  
 | Run | Styles           | Recalculate Styles | Layout | Update Layertree | Paint     | Composite |
@@ -100,7 +100,7 @@ _[2] unoptimized vs contain_
 
 ### `content-visibility:auto`
 
-If we apply **`content-visibility:auto`** to all **`.card`** elements and **initially render the cards** we should be able to improve the full render pipeling as we can literally ignore those nodes from the whole process.
+If we apply **`content-visibility:auto`** to all **`.card`** elements and **initially render the cards** we should be able to improve the full render pipeline as we can literally ignore those nodes from the whole process.
 
 ![img-comparison-bootstrap-content-visibility-diagram](https://user-images.githubusercontent.com/95690470/159006915-695bb687-7edc-45b0-ae2e-8d9261c72047.PNG)
 
@@ -119,7 +119,7 @@ Running a measure gives the following flames:
 The measure showed the following outcome:
 - ✔ drastic improvement in recalculate styles clearly visible (22 times faster)
 - ✔ drastic improvement in layouting clearly visible (120 times faster)
-- 🤷‍👍 drastic improvement in composit and small in paint is measurably faster [3]
+- 🤷‍👍 drastic improvement in composite, and small in paint is measurably faster [3]
 - ✔ drastic improvement in painting items offscreen clearly visible (22 times faster)
 
 _[3] contain:content vs content-visibility_  
